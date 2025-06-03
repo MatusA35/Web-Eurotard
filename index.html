@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eurotard </title>
+  <!-- bootstrap css link  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- fontawsome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- using slick slider for slidings  -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.1/dist/css/lightbox.min.css" rel="stylesheet">
+
+
+  <!-- custome css link  -->
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // duración de la animación en ms
+    easing: 'ease-in-out',
+    once: true, // solo se ejecuta una vez
+  });
+</script>
+
+<script>
+  // Cierra todos los dropdowns abiertos
+  function closeAllDropdowns() {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      dropdown.classList.remove('show');
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    const toggle = e.target.closest('.dropdown-toggle');
+
+    if (toggle) {
+      e.preventDefault();
+      const dropdown = toggle.closest('.dropdown');
+      const isOpen = dropdown.classList.contains('show');
+
+      closeAllDropdowns(); // Cierra todos los abiertos
+      if (!isOpen) {
+        dropdown.classList.add('show'); // Solo abre si estaba cerrado
+      }
+    } else {
+      // Si el clic fue fuera del menú, lo cierra
+      closeAllDropdowns();
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+    const message = document.getElementById("formMessage");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault(); // Evita que recargue
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          message.style.display = "block";     // Muestra mensaje
+          form.reset();                        // Limpia campos
+        } else {
+          message.innerText = "Error sending message. Try again.";
+          message.style.color = "red";
+          message.style.display = "block";
+        }
+      } catch (error) {
+        message.innerText = "Something went wrong.";
+        message.style.color = "red";
+        message.style.display = "block";
+      }
+    });
+  });
+</script>
+
+
+
+
+<body>
+
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+
+  <header class="text-center py-3">
+    <div class="logo-area">
+      <a href="#">
+        <img src="image/ Eurotard Dancewear Logo.webp" alt="Logo Eurotard" class="main-logo">
+      </a>
+      <div class="logo-subtext">
+        <img src="image/For the Love of Dance.webp" alt="Frase debajo del logo" class="logo-phrase">
+      </div>
+    </div>
+
+
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+    
+              <!-- Dance -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownDance" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dance
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownDance">
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">Shoes</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=leotard">Leotards</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=69">Tights</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=54">Skirts</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=shorts">Shorts</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=2">Leggings</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=41">Undergarments</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=990">Toe Pads</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=18">Warm-Ups & Knits</a></li>
+                </ul>
+              </li>
+    
+              <!-- Tights -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownTights" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Tights
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownTights">
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=115">All Tights</a></li>
+                  <li><a class="dropdown-item" href="#">True Non-Run® Tights</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=114">Shimmer Tights</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=120">Specialty Tights</a></li>
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=68">Boys & Men Tights</a></li>
+                </ul>
+              </li>
+    
+              <!-- Shoes -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownShoes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Shoes
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownShoes">
+                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">All Eurotard Shoes</a></li>
+                  <li><a class="dropdown-item" href="#">Ballet</a></li>
+                  <li><a class="dropdown-item" href="#">Jazz</a></li>
+                  <li><a class="dropdown-item" href="#">Half Soles</a></li>
+                  <li><a class="dropdown-item" href="#">Tap</a></li>
+                  <li><a class="dropdown-item" href="#">Character</a></li>
+                  <li><a class="dropdown-item" href="Pointe Shoes.html">Merlet Pointe Shoes</a></li>
+                  <li><a class="dropdown-item" href="#">Merlet Ballroom Shoes</a></li>
+                </ul>
+              </li>
+    
+              <!-- Merlet -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownMerlet" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Merlet
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMerlet">
+                  <li><a class="dropdown-item" href="Pointe Shoes.html">Pointe Shoes</a></li>
+                  <li><a class="dropdown-item" href="#">Ballroom Shoes</a></li>
+                  <li><a class="dropdown-item" href="#">Accessories</a></li>
+                </ul>
+              </li>
+    
+              <!-- Praise -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownPraise" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Praise
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownPraise">
+                  <li><a class="dropdown-item" href="#">Dresses</a></li>
+                  <li><a class="dropdown-item" href="#">Skirts</a></li>
+                  <li><a class="dropdown-item" href="#">Tops & Tunics</a></li>
+                  <li><a class="dropdown-item" href="#">Overlays</a></li>
+                  <li><a class="dropdown-item" href="#">Unitards</a></li>
+                  <li><a class="dropdown-item" href="#">Undergarments</a></li>
+                  <li><a class="dropdown-item" href="#">Shoes</a></li>
+                  <li><a class="dropdown-item" href="#">Accessories</a></li>
+                </ul>
+              </li>
+    
+              <!-- Otras secciones -->
+              <li class="nav-item"><a class="nav-link" href="#">Gymnastics</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Embroidery</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Shapewear</a></li>
+    
+              <!-- Studio & Groups -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownStudio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Studio & Groups
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownStudio">
+                  <li><a class="dropdown-item" href="#">Dress Code Solution</a></li>
+                  <li><a class="dropdown-item" href="#">Studio/Group Forms</a></li>
+                  <li><a class="dropdown-item" href="#">FAQ</a></li>
+                  <li><a class="dropdown-item" href="#">Find My Studio</a></li>
+                  <li><a class="dropdown-item" href="#">Find My Dress Code</a></li>
+                </ul>
+              </li>
+    
+              <!-- Materials -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownMaterials" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Materials
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMaterials">
+                  <li><a class="dropdown-item" href="#">USA Microfiber Fibers</a></li>
+                  <li><a class="dropdown-item" href="#">USA Cotton Fibers</a></li>
+                  <li><a class="dropdown-item" href="#">USA Polyester Fibers</a></li>
+                </ul>
+              </li>
+            </ul>
+    
+            <!-- Botones de Wholesale y Sign In -->
+            <div class="d-flex align-items-center ms-lg-3 gap-3">
+              <a href="https://eurotard.com/v4/SignOn.aspx" class="nav-link wholesale-btn px-3 py-1">Wholesale</a>
+              <a href="https://eurotard.com/v4/SignOn.aspx" class="nav-link wholesale-btn px-3 py-1">Sign In</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+
+
+
+
+
+
+
+
+  <!-- BANNER SLIDE -->
+  <!-- BANNER SLIDE -->
+  <!-- BANNER SLIDE -->
+  <section id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- BANNER 1 -->
+      <div class="carousel-item active">
+        <div class="hero-slide">
+          <div class="overlay-content">
+            <h1>Children’s Collection</h1>
+            <p>Variety of Designs and Colors</p>
+            <div class="hero-buttons">
+              <a href="https://eurotard.com/v4/ShowStyle.aspx?style=78228c" class="btn btn-buy">Shop Now</a>
+              <a href="https://eurotard.com/v4/SearchResults.aspx?search=children" class="btn btn-more">All More</a>
+            </div>
+          </div>
+          <img src="image/banner 1.webp" alt="Banner 1" class="d-block w-100 hero-img">
+        </div>
+      </div>
+
+      <!-- BANNER 2 -->
+      <div class="carousel-item">
+        <div class="hero-slide">
+          <div class="overlay-content">
+            <h1>Children’s Collection</h1>
+            <p>Variety of Designs and Colors</p>
+            <div class="hero-buttons">
+              <a href="https://eurotard.com/v4/ShowStyle.aspx?style=A2004a" class="btn btn-buy">Shop Now</a>
+              <a href="https://eurotard.com/v4/SearchResults.aspx?search=dancewear" class="btn btn-more">All More</a>
+            </div>
+          </div>
+          <img src="image/banner 2.webp" alt="Banner 2" class="d-block w-100 hero-img">
+        </div>
+      </div>
+
+
+      <!-- BANNERS 3 -->
+      <div class="carousel-item">
+        <a href="https://tu-link-1.com">
+          <img src="image/banner 3.webp" alt="Banner 3" class="d-block w-100 hero-img">
+        </a>
+      </div>
+      <!-- BANNER 8 -->
+      <div class="carousel-item">
+        <a href="https://tu-link-1.com">
+          <img src="image/banner 4.webp" alt="Banner 4" class="d-block w-100 hero-img">
+        </a>
+      </div>
+      <!-- BANNER 5  -->
+      <div class="carousel-item">
+        <a href="https://tu-link-2.com">
+          <img src="image/banner 5.webp" alt="Banner 5" class="d-block w-100 hero-img">
+        </a>
+      </div>
+      <!-- BANNER 6  -->
+      <div class="carousel-item">
+        <a href="https://eurotard.com/v4/default.aspx?id=9">
+          <img src="image/BANNER EUROTAD SHOES.webp" alt="Banner 6" class="d-block w-100 hero-img">
+        </a>
+      </div>
+      <!-- BANNER 7  -->
+      <div class="carousel-item">
+        <a href="https://eurotard.com/v4/SearchResults.aspx?search=a1004">
+          <img src="image/Pointe Shoe Banner.webp" alt="Banner 7" class="d-block w-100 hero-img">
+        </a>
+      </div>
+
+      <!-- BANNER 8  -->
+      <div class="carousel-item">
+        <img src="image/banner Ballroom.webp" alt="Banner 8" class="d-block w-100 hero-img">
+      </div>
+    </div>
+
+    <!-- Botones-->
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </section>
+  <!-- BANNER SLIDE -->
+  <!-- BANNER SLIDE -->
+  <!-- BANNER SLIDE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- GIFS INFORMATIVO -->
+  <!-- GIFS INFORMATIVO -->
+  <!-- GIFS INFORMATIVO -->
+  <section class="gifs-informativo">
+    <a href="https://eurotard.com/v4/default.aspx?id=92" target="_blank">
+      <img src="image/cintillo GIF.gif" alt="Información">
+    </a>
+  </section>
+  <!-- GIFS INFORMATIVO -->
+  <!-- GIFS INFORMATIVO -->
+  <!-- GIFS INFORMATIVO -->
+
+
+
+
+
+
+
+
+  <!-- Featured Products -->
+  <!-- Featured Products -->
+  <!-- Featured Products -->
+  <section id="featured-products" class="py-5">
+    <div class="container">
+      <div class="section-title text-center mb-5">
+        <h2>Featured Products</h2>
+        <p>Top Picks by Our Dancers</p>
+      </div>
+      <div class="row g-4">
+
+        <!-- Producto -->
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <a href="https://eurotard.com/v4/SearchResults.aspx?search=A1004">
+              <img src="FOTOS PROMOCIONES/A1004a 2.jpg" alt="Producto 1" class="img-fluid">
+            </a>
+            <div class="product-info">
+              <h4> Assemblé Ballet Shoe</h4>
+              <p class="price">$44.00 </p>
+              <a href="https://eurotard.com/v4/SearchResults.aspx?search=A1004" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <a href="https://eurotard.com/v4/SearchResults.aspx?search=A2054">
+              <img src="FOTOS PROMOCIONES/A2054a + A2054c .webp" alt="Producto 1" class="img-fluid">
+            </a>
+            <div class="product-info">
+              <h4>Axle Jazz Shoe </h4>
+              <p class="price">$38.00</p>
+              <a href="https://eurotard.com/v4/SearchResults.aspx?search=A2054" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <a href="https://eurotard.com/v4/SearchResults.aspx?search=4401">
+              <img src="FOTOS PROMOCIONES/4401 + 4401c .webp" alt="Producto 1" class="img-fluid">
+            </a>
+            <div class="product-info">
+              <h4>Style 4401c</h4>
+              <p class="price">$29.00</p>
+              <a href="https://eurotard.com/v4/SearchResults.aspx?search=4401" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <a href="https://eurotard.com/v4/ShowStyle.aspx?style=41489">
+              <img src="FOTOS PROMOCIONES/41489  .webp" alt="Producto 1" class="img-fluid">
+            </a>
+            <div class="product-info">
+              <h4>Style 41489</h4>
+              <p class="price">$32.00</p>
+              <a href="https://eurotard.com/v4/ShowStyle.aspx?style=41489" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <a href="https://www.eurotard.com/V4/ShowStyle.aspx?style=41670">
+              <img src="FOTOS PROMOCIONES/06.webp" alt="Producto 1" class="img-fluid">
+            </a>
+            <div class="product-info">
+              <h4>Style 41670</h4>
+              <p class="price">$27.00</p>
+              <a href="https://www.eurotard.com/V4/ShowStyle.aspx?style=41670" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <a href="https://eurotard.com/v4/ShowStyle.aspx?style=41121">
+              <img src="FOTOS PROMOCIONES/41121 + 41121c  .webp" alt="Producto 1" class="img-fluid">
+            </a>
+            <div class="product-info">
+              <h4>Style 41121</h4>
+              <p class="price">$38.00</p>
+              <a href="https://eurotard.com/v4/ShowStyle.aspx?style=41121" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <a href="https://eurotard.com/v4/ShowStyle.aspx?style=0036">
+              <img src="FOTOS PROMOCIONES/04.webp" alt="Producto 1" class="img-fluid">
+            </a>
+            <div class="product-info">
+              <h4>Style 0036</h4>
+              <p class="price">$38.00</p>
+              <a href="https://eurotard.com/v4/ShowStyle.aspx?style=0036" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <a href="https://eurotard.com/v4/default.aspx?id=115">
+              <img src="FOTOS PROMOCIONES/Tights.webp" alt="Producto 1" class="img-fluid">
+            </a>
+            <div class="product-info">
+              <h4>True Non-Run®️ Tights</h4>
+              <p class="price">$38.00</p>
+              <a href="https://eurotard.com/v4/default.aspx?id=115" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+        <!-- Featured Products -->
+        <!-- Featured Products -->
+        <!-- Featured Products -->
+
+
+
+
+
+
+
+
+
+
+        <!-- Product Categories -->
+        <!-- Product Categories -->
+        <!-- Product Categories -->
+        <section id="galeria" class="py-5">
+          <div class="container-fluid">
+            <div class="text-center mb-4">
+              <h2>Product Categories</h2>
+              <p>Explore by Category</p>
+            </div>
+
+            <!-- BOTONES -->
+            <div class="filter-buttons text-center mb-4">
+              <a href="https://eurotard.com/v4/default.aspx?id=66" class="filter-btn" data-filter="baila">Adult
+                Fashion</a>
+              <a href="https://eurotard.com/v4/default.aspx?id=65" class="filter-btn" data-filter="baila">Child
+                Fashion</a>
+              <a href="https://eurotard.com/v4/default.aspx?id=20" class="filter-btn" data-filter="relogio">Praise</a>
+              <a href="https://eurotard.com/v4/default.aspx?id=78" class="filter-btn"
+                data-filter="gimnasia">Gymnastics</a>
+              <a href="https://eurotard.com/v4/default.aspx?id=67" class="filter-btn" data-filter="fajas">Cotton</a>
+              <a href="https://eurotard.com/v4/default.aspx?id=41" class="filter-btn"
+                data-filter="grupos">Microfiber</a>
+              <a href="https://eurotard.com/v4/default.aspx?id=69" class="filter-btn" data-filter="estudios">Tights</a>
+              <a href="https://eurotard.com/v4/default.aspx?id=9" class="filter-btn" data-filter="grupos">Eurotard
+                Shoes</a>
+              <a href="espera de link" class="filter-btn" data-filter="grupos">Merlet Shoes</a>
+            </div>
+            <!-- BOTONES -->
+
+
+
+            <!-- Galería -->
+            <div class="row gallery-grid">
+              <!-- Ítem de galería -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=70">
+                    <img src="GALERIA FILTRABLE/Studio Microfiber Essentials.webp" class="img-fluid"
+                      alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=70" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Studio Microfiber Essentials - USA Fibers</h5>
+                  <p class="product-price"></p>
+                </div>
+              </div>
+
+
+              <!-- 2 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=42">
+                    <img src="GALERIA FILTRABLE/Studio Cotton Essentials.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=42" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Studio Cotton Essentials - USA Fibers</h5>
+                  <p class="product-price"></p>
+                </div>
+              </div>
+
+
+              <!-- 3 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=78">
+                    <img src="GALERIA FILTRABLE/Shoe.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=78" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name"> Eurotard Shoe Collection</h5>
+                  <p class="product-price"></p>
+                </div>
+              </div>
+
+              <!-- 4 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=20">
+                    <img src="GALERIA FILTRABLE/Praise & Liturgical.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=20" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Praise & Liturgical</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+
+              <!-- 5 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=78">
+                    <img src="GALERIA FILTRABLE/Gymnastics.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=78" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Gymnastics</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 6 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=69">
+                    <img src="GALERIA FILTRABLE/tights post.jpg" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=69" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">True Non-Run®️ Tights</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 7 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=120">
+                    <img src="GALERIA FILTRABLE/Specialty Tights.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=120" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Specialty Tights</h5>
+                  <p class="product-price"></p>
+                </div>
+              </div>
+
+              <!-- 8 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=41">
+                    <img src="GALERIA FILTRABLE/Undergarments.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=41" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Undergarments</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+
+              <!-- 9 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=54">
+                    <img src="GALERIA FILTRABLE/Skirts.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=54" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Skirts</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+
+              <!-- 10 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=18">
+                    <img src="GALERIA FILTRABLE/Knitwear & Warm-Ups.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=18" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Knitwear & Warm-Ups</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 11 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=67">
+                    <img src="GALERIA FILTRABLE/Separates.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=67" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Separates</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 12 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=68">
+                    <img src="GALERIA FILTRABLE/Boys & Men.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=68" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Boys & Men</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 13 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=66">
+                    <img src="GALERIA FILTRABLE/Adult Fashion.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=66" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Adult Fashion</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 14 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=65">
+                    <img src="GALERIA FILTRABLE/Child Fashion.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=65" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Child Fashion</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 15 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=92">
+                    <img src="GALERIA FILTRABLE/New Arrivals.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=92" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">New Arrivals</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 16 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/embroidery.aspx">
+                    <img src="GALERIA FILTRABLE/Embroidery.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/embroidery.aspx" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Embroidery</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 17 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=72">
+                    <img src="GALERIA FILTRABLE/Accessories.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=72" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Toe Pads</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 18 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=13">
+                    <img src="GALERIA FILTRABLE/Tutu Dresses & Tutu.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=13" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Chiffon Skirt</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 19 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="index Merlet.html">
+                    <img src="GALERIA FILTRABLE/Merlet.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="index Merlet.html" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Merlet Pointe Shoes</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+              <!-- 20 -->
+              <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+                <div class="gallery-img position-relative">
+                  <a href="https://eurotard.com/v4/default.aspx?id=93">
+                    <img src="GALERIA FILTRABLE/Dance Dresses.webp" class="img-fluid" alt="Leotardo Clásico">
+                  </a>
+                  <div class="overlay always-visible">
+                    <a href="https://eurotard.com/v4/default.aspx?id=93" class="btn btn-buy-now">Shop Now</a>
+                  </div>
+                </div>
+                <div class="product-info text-center mt-3">
+                  <h5 class="product-name">Dance Dresses</h5>
+                  <p class="product-price">$44.00</p>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </section>
+        <!-- Product Categories -->
+        <!-- Product Categories -->
+        <!-- Product Categories -->
+
+
+
+
+
+
+
+
+
+        <!--Sección Informativa-->
+        <!--Sección Informativa-->
+        <!--Sección Informativa-->
+        <section class="service-info-section">
+          <div class="container">
+            <div class="service-grid">
+
+
+              <div class="service-item">
+                <div class="service-icon">
+                  <!-- Icono de Envíos -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-check-square-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                  </svg>
+                </div>
+                <h4>High-Quality Materials</h4>
+                <p>Our commitment is to deliver products and designs of the highest guality.</p>
+              </div>
+
+
+              <div class="service-item">
+                <div class="service-icon">
+                  <!-- Icono de Tipo de Pago -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z" />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466" />
+                  </svg>
+                </div>
+                <h4>Easy 30-day Returns</h4>
+                <p>Risk-free 30-day retunrs for easy exhanges or refunds.</p>
+              </div>
+
+              <div class="service-item">
+                <div class="service-icon">
+                  <!-- Icono de Garantías -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793z" />
+                  </svg>
+                </div>
+                <h4>Secure Checkout</h4>
+                <p>Your payment information is safe with our secure checkout.</p>
+              </div>
+
+              <div class="service-item">
+                <div class="service-icon">
+                  <!-- Icono de Métodos de Pago -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z" />
+                  </svg>
+                </div>
+                <h4>Free Shipping???</h4>
+                <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+              </div>
+
+
+            </div>
+          </div>
+        </section>
+        <!--Sección Informativa-->
+        <!--Sección Informativa-->
+        <!--Sección Informativa-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- BANNER MERLET CARRUSEL -->
+        <!-- BANNER MERLET CARRUSEL -->
+        <!-- BANNER MERLET CARRUSEL -->
+        <!-- BANNER MERLET CARRUSEL -->
+       
+        <section id="promo-banners" class="py-0 m-0">
+          <div class="container-fluid px-0">
+            <div class="swiper promoSwiper">
+
+              <!-- Contenedor de Slides -->
+              <div class="swiper-wrapper">
+
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <a href="https://eurotard.com/v4/default.aspx?id=54" class="promo-slide"
+                    style="background-image: url('Banner Merlet/banner 2.webp');"></a>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                  <a href="https://eurotard.com/v4/default.aspx?id=66" class="promo-slide"
+                    style="background-image: url('Banner Merlet/banner 1.webp');"></a>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <a href="https://eurotard.com/v4/default.aspx?id=9" class="promo-slide"
+                    style="background-image: url('Banner Merlet/banner 3.webp');"></a>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                  <a href="https://eurotard.com/v4/default.aspx?id=9" class="promo-slide"
+                    style="background-image: url('Banner Merlet/banner 4.webp');"></a>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                  <a href="https://eurotard.com/v4/default.aspx?id=9" class="promo-slide"
+                    style="background-image: url('Banner Merlet/banner 5.webp');"></a>
+                </div>
+
+              </div>
+
+              <!-- Flechas fuera del swiper-wrapper -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+
+              <!-- Paginación -->
+              <div class="swiper-pagination mt-4"></div>
+            </div>
+          </div>
+        </section>
+
+
+
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <script>
+          const swiper = new Swiper('.promoSwiper', {
+            loop: true,
+            autoplay: {
+              delay: 5000, // Cambia cada 5 segundos
+              disableOnInteraction: false,
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+          });
+        </script>
+        <!-- BANNER MERLET CARRUSEL -->
+        <!-- BANNER MERLET CARRUSEL -->
+        <!-- BANNER MERLET CARRUSEL -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- FORMULARIO DE CONTACTO-->
+        <!-- FORMULARIO DE CONTACTO-->
+        <!-- FORMULARIO DE CONTACTO-->
+        <section id="contacto" class="contact-section">
+          <div class="container">
+            <div class="contact-content">
+              <h2 class="contact-title animate__animated animate__fadeIn">Contact Us</h2>
+              <p class="contact-subtext animate__animated animate__fadeIn animate__delay-1s">
+                Have questions? Send us a message and we’ll get back to you.
+              </p>
+              <form id="contactForm" class="contact-form animate__animated animate__fadeIn animate__delay-2s"
+                action="https://formspree.io/f/mgvkrolw" method="POST">
+
+                <input type="text" name="name" placeholder="Your Name / Store Name / Castumer ID" required>
+                <input type="text" name="name" placeholder="Your State / Country " required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                <input type="Cell phone" name="Cell phone" placeholder="Your Cell phone" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-contact">Send Message</button>
+              </form>
+              <div id="formMessage" class="form-message" style="display: none; margin-top: 1rem; color: green;">
+                Thank you! Your message has been sent.
+              </div>
+
+
+            </div>
+          </div>
+        </section>
+
+        <script>
+          const form = document.querySelector(".contact-form");
+
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const data = new FormData(form);
+
+            fetch(form.action, {
+              method: "POST",
+              body: data,
+              headers: {
+                'Accept': 'application/json'
+              }
+            }).then(response => {
+              if (response.ok) {
+                message.innerText = "Message sent successfully!";
+                message.style.color = "green";
+                message.style.display = "block";
+                form.reset();
+              }
+
+            });
+          });
+        </script>
+        <!-- FORMULARIO DE CONTACTO-->
+        <!-- FORMULARIO DE CONTACTO-->
+        <!-- FORMULARIO DE CONTACTO-->
+
+
+
+
+
+
+
+
+
+        <!--AREA DE REDES SOCIALE-->
+        <!--AREA DE REDES SOCIALE-->
+        <!--AREA DE REDES SOCIALE-->
+        <section id="redes-sociales" class="social-section">
+          <div class="container">
+            <div class="social-content animate__animated animate__fadeInUp">
+              <h2 class="social-title">Follow Us</h2>
+              <p class="social-description">
+                Stay up to date with our latest news, releases, and exclusive promotions on our social media.
+              </p>
+              <div class="social-icons">
+                <a href="https://www.facebook.com/eurotard"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/eurotarddancewear"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/eurotard?s=21"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.pinterest.com/eurotarddancewear/"><i class="fab fa-pinterest-p"></i></a>
+                <a href="https://www.youtube.com/channel/UCO3diPzqqUXHEfwjp4-tfHg?reload=9&view_as=subscriber"><i
+                    class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--AREA DE REDES SOCIALE-->
+        <!--AREA DE REDES SOCIALE-->
+        <!--AREA DE REDES SOCIALE-->
+
+
+
+
+
+
+
+
+
+
+
+        <!--AREA DE FOOTER-->
+        <!--AREA DE FOOTER-->
+        <!--AREA DE FOOTER-->
+        <footer class="main-footer">
+          <div class="footer-container">
+            <div class="footer-logo">
+              <img src="image/Eurotard Merlet Logo .webp" alt="Logo Eurotard">
+            </div>
+
+            <div class="footer-column">
+              <h4>SHOP</h4>
+              <ul>
+                <li><a href="https://eurotard.com/v4/FindAStore.aspx">Stores Near You</a></li>
+                <li><a href="https://eurotard.com/studiosgroups.html">Studio/Group Sales</a></li>
+                <li><a href="#">Wholesale Inquiries</a></li>
+                <li><a href="#">International Sales</a></li>
+                <li><a href="https://www.eurotard.com/catalog/images/size_page.pdf">Size Chart</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>LEARN</h4>
+              <ul>
+                <li><a href="https://eurotard.com/about.html">Mission</a></li>
+                <li><a href="https://eurotard.com/about.html">Our Fabrics</a></li>
+                <li><a href="https://eurotard.com/terms-of-use.html">Terms of Use</a></li>
+                <li><a href="https://eurotard.com/map-policy.html">MAP Policy</a></li>
+                <li><a href="https://eurotard.com/privacy-policy.html">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>CONNECT</h4>
+              <ul>
+                <li><a href="https://eurotard.com/news.html">News</a></li>
+                <li><a href="https://eurotard.com/careers.html">Careers</a></li>
+                <li><a href="https://eurotard.com/v4/Contact.aspx">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>&copy; LYCRA® is a trademark of The LYCRA Company
+              TACTEL® is a trademark of The LYCRA Company and licensed by NILIT®
+
+              Copyright 1982-2021 Eurotard Dancewear, All rights reserved. Photography: Brad Budd, Richard Calmes, Sean
+              McCarthy</p>
+          </div>
+        </footer>
+        <!--AREA DE FOOTER-->
+        <!--AREA DE FOOTER-->
+        <!--AREA DE FOOTER-->
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+          crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.1/dist/js/lightbox.min.js"></script>
+        
+        </body>
+        
+        </html>

@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Merlet Pointe Shoes </title>
+  <!-- bootstrap css link  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- fontawsome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- using slick slider for slidings  -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.1/dist/css/lightbox.min.css" rel="stylesheet">
+
+
+  <!-- custome css link  -->
+  <link rel="stylesheet" href="Pointe Shoes.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // duración de la animación en ms
+    easing: 'ease-in-out',
+    once: true, // solo se ejecuta una vez
+  });
+</script>
+
+<script>
+  // Cierra todos los dropdowns abiertos
+  function closeAllDropdowns() {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      dropdown.classList.remove('show');
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    const toggle = e.target.closest('.dropdown-toggle');
+
+    if (toggle) {
+      e.preventDefault();
+      const dropdown = toggle.closest('.dropdown');
+      const isOpen = dropdown.classList.contains('show');
+
+      closeAllDropdowns(); // Cierra todos los abiertos
+      if (!isOpen) {
+        dropdown.classList.add('show'); // Solo abre si estaba cerrado
+      }
+    } else {
+      // Si el clic fue fuera del menú, lo cierra
+      closeAllDropdowns();
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+    const message = document.getElementById("formMessage");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault(); // Evita que recargue
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          message.style.display = "block";     // Muestra mensaje
+          form.reset();                        // Limpia campos
+        } else {
+          message.innerText = "Error sending message. Try again.";
+          message.style.color = "red";
+          message.style.display = "block";
+        }
+      } catch (error) {
+        message.innerText = "Something went wrong.";
+        message.style.color = "red";
+        message.style.display = "block";
+      }
+    });
+  });
+</script>
+
+
+<script>
+  const track = document.getElementById('carouselTrack');
+  const totalSlides = 6;
+  let index = 0;
+
+  function moveToNextSlide() {
+    index = (index + 1) % totalSlides;
+    track.style.transform = `translateX(-${index * 100}vw)`;
+  }
+
+  setInterval(moveToNextSlide, 3000); // cambia cada 3 segundos
+</script>
+
+
+<body>
+
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+
+  <header class="text-center py-3">
+    <div class="logo-area">
+      <a href="index.html">
+        <img src="image/ Eurotard Dancewear Logo.webp" alt="Logo Eurotard" class="main-logo">
+      </a>
+      <div class="logo-subtext">
+        <img src="image/For the Love of Dance.webp" alt="Frase debajo del logo" class="logo-phrase">
+      </div>
+    </div>
+    <div class="logo2-subtext">
+      <img src="image/Merlet Logo SIMPLE.png" alt="Frase debajo del logo" class="logo-phrase">
+    </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+
+          <!-- Dance -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="area1Dropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dance
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="area1Dropdown">
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">Shoes</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=leotard">Leotards</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=69">Tights</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=54">Skirts</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=shorts">Shorts</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=2">Leggings</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=41">Undergarments</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=990">Toe Pads</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=18">Warm-Ups & Knits</a></li>
+            </ul>
+          </li>
+
+
+          <!-- Tights -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="area1Dropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Tights
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="area1Dropdown">
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=115">All Tights</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=115">True Non-Run® Tights</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=114">Shimmer Tights</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=120">Specialty Tights</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=68">Boys & Men Tights</a></li>
+            </ul>
+          </li>
+
+
+          <!-- Shoes -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="area1Dropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Shoes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="area1Dropdown">
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">All Eurotard Shoes</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=115">Ballet</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=114"> Jazz</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=120">Tap</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=68">Merlet Pointe Shoes</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=68">Merlet Ballroom Shoes</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Merlet -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="area1Dropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Merlet
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="area1Dropdown">
+
+              <li><a class="dropdown-item" href="Pointe Shoes.html">Pointe Shoes</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=68">Ballroom Shoes</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=68">Accessories</a>
+              </li>
+            </ul>
+          </li>
+
+
+          <!-- Praise -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="area2Dropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Praise
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="area2Dropdown">
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=dress">Dresses</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=skirt">Skirts</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=tunic">Tops &
+                  Tunics</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=overlay">Overlays</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=unitard">Unitards</a>
+              </li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=41">Undergarments</a></li>
+
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">Shoes</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=1">Accessories</a></li>
+            </ul>
+          </li>
+
+
+          <!-- Gymnastics -->
+          <li class="nav-item">
+            <a class="nav-link" href="https://eurotard.com/v4/default.aspx?id=78">
+              Gymnastics
+            </a>
+          </li>
+
+          <!-- Embroidery -->
+          <li class="nav-item">
+            <a class="nav-link" href="https://eurotard.com/v4/embroidery.aspx">
+              Embroidery
+            </a>
+          </li>
+
+          <!-- Shapewear -->
+          <li class="nav-item">
+            <a class="nav-link" href="https://eurotard.com/v4/default.aspx?id=77">
+              Shapewear
+            </a>
+          </li>
+
+          <!-- Studio & Group -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="area3Dropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Studio & Groups
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="area3Dropdown">
+              <li><a class="dropdown-item" href="https://eurotard.com/studiosgroups.html">Dress Code Solution</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/studio-forms.html">Studio/Group Forms</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/faq.html">FAQ</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/FindAClass.aspx">Find My Studio</a></li>
+              <li><a class="dropdown-item" href="https://eurotard.com/v4/classuniform.aspx">Find My Dress Code</a>
+              </li>
+            </ul>
+          </li>
+
+           <!-- Materials-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="area3Dropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Materials
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="area3Dropdown">
+            <li><a class="dropdown-item" href="https://eurotard.com/studiosgroups.html">Dress Code Solution</a></li>
+            <li><a class="dropdown-item" href="https://eurotard.com/studio-forms.html">Studio/Group Forms</a></li>
+            <li><a class="dropdown-item" href="https://eurotard.com/faq.html">FAQ</a></li>
+        </li>
+        </ul>
+        </ul>
+        </li>
+        </ul>
+
+
+        <!-- Botón de Wholesale -->
+        <!-- Contenedor de botones agrupado para mejor control -->
+        <div class="d-flex align-items-center ms-lg-3 gap-3">
+          <!-- Botón Wholesale -->
+          <a href="https://eurotard.com/v4/SignOn.aspx" class="nav-link wholesale-btn px-3 py-1">
+            Wholesale
+          </a>
+
+          <!-- Botón Sign In -->
+          <a href="https://eurotard.com/v4/SignOn.aspx" class="nav-link wholesale-btn px-3 py-1">
+            Sign In
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+  <!-- HEADER Y BARRA DE NAVEGACION -->
+
+
+
+
+  <!--BANNER SLIDE -->
+  <!--BANNER SLIDE -->
+  <!--BANNER SLIDE -->
+
+
+  <section id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <a href="https://link1.com" target="_blank" rel="noopener noreferrer">
+          <img src="Banner Merlet/banner MERLET1.webp" alt="Imagen 1" />
+        </a>
+      </div>
+
+      <div class="carousel-item">
+        <a href="https://link2.com" target="_blank" rel="noopener noreferrer">
+          <img src="Banner Merlet/banner MERLET4.webp" alt="Imagen 2" />
+        </a>
+      </div>
+
+      <div class="carousel-item">
+        <a href="https://link3.com" target="_blank" rel="noopener noreferrer">
+          <img src="Banner Merlet/banner MERLET2.webp" alt="Imagen 3" />
+        </a>
+      </div>
+
+      <div class="carousel-item">
+        <a href="https://link4.com" target="_blank" rel="noopener noreferrer">
+          <img src="Banner Merlet/banner MERLET3.webp" alt="Imagen 4" />
+        </a>
+      </div>
+
+      <div class="carousel-item">
+        <a href="https://link5.com" target="_blank" rel="noopener noreferrer">
+          <img src="Banner Merlet/banner MERLET5.webp" alt="Imagen 5" />
+        </a>
+      </div>
+
+      <div class="carousel-item">
+        <a href="https://link6.com" target="_blank" rel="noopener noreferrer">
+          <img src="Banner Merlet/Pointe Shoe Banner.webp" alt="Imagen 6" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Flechas -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+
+  </section>
+
+  <!--BANNER SLIDE -->
+  <!--BANNER SLIDE -->
+  <!--BANNER SLIDE -->
+
+
+
+
+
+
+
+
+
+
+  <section id="galeria" class="py-5">
+    <div class="container-fluid">
+      <!-- Encabezado -->
+      <div class="text-center mb-4">
+        <h2>Merlet Pointe Shoes</h2>
+        <p></p>
+      </div>
+
+      <!-- boton 1 -->
+      <div class="filter-buttons1 text-center mb-4">
+        <a href="#contacto" class="filter-btn">Request a Fitting</a>
+      </div>
+      <section>
+
+        <section class="container py-5">
+          <div class="row">
+            <!-- Video a la izquierda -->
+            <div class="col-lg-6 mb-4">
+              <video autoplay loop muted playsinline class="img-fluid rounded shadow w-100 h-auto">
+                <source src="Banner Merlet/Video Merlet.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+              </video>
+            </div>
+
+            <!-- Productos 1 -->
+            <div class="col-lg-6 mb-4 d-flex flex-column justify-content-between">
+              <div class="row">
+                <div class="col-md-6 col-6 mb-4">
+                  <div class="product-card h-100">
+                    <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CBelle">
+                      <img src="Banner Merlet/Belle.webp" alt="Producto 1" class="img-fluid product-img">
+                    </a>
+                    <div class="product-info text-center">
+                      <h4>Belle</h4>
+                      <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+                        <a href="#" class="btn btn-buy-now learn-more-btn" data-modal="pdfModal1"
+                          data-pdf="Banner Merlet/pdf Belle.pdf">Learn More</a>
+                        <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CBelle"
+                          class="btn btn-buy-now">Shop Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Productos 2 -->
+                <div class="col-md-6 col-6 mb-4">
+                  <div class="product-card h-100">
+                    <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CLena">
+                      <img src="Banner Merlet/Lena.webp" alt="Producto 2" class="img-fluid product-img">
+                    </a>
+                    <div class="product-info text-center">
+                      <h4>Lena</h4>
+                      <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+                        <a href="#" class="btn btn-buy-now learn-more-btn" data-modal="pdfModal2"
+                          data-pdf="Banner Merlet/pdf Lena.pdf">Learn More</a>
+                        <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CLena"
+                          class="btn btn-buy-now">Shop Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fila inferior productos 1 -->
+            <div class="col-12">
+              <div class="row mt-3">
+                <!-- Producto 3 -->
+                <div class="col-6 col-sm-6 col-md-3 mb-4">
+                  <div class="product-card h-100">
+                    <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CCloe">
+                      <img src="Banner Merlet/Cloe.webp" alt="Producto 3" class="img-fluid product-img"></a>
+                    <div class="product-info text-center">
+                      <h4>Cloe</h4>
+                      <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+                        <a href="#" class="btn btn-buy-now learn-more-btn" data-modal="pdfModal3"
+                          data-pdf="Banner Merlet/pdf Cloe.pdf">Learn More</a>
+                        <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CCloe"
+                          class="btn btn-buy-now">Shop Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="col-6 col-sm-6 col-md-3 mb-4">
+                  <div class="product-card h-100">
+                    <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CDiva">
+                      <img src="Banner Merlet/Diva.webp" alt="Producto 4" class="img-fluid product-img"></a>
+                    <div class="product-info text-center">
+                      <h4>Diva</h4>
+                      <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+                        <a href="#" class="btn btn-buy-now learn-more-btn" data-modal="pdfModal4"
+                          data-pdf="Banner Merlet/pdf Diva.pdf">Learn More</a>
+                        <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CDiva"
+                          class="btn btn-buy-now">Shop Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="col-6 col-sm-6 col-md-3 mb-4">
+                  <div class="product-card h-100">
+                    <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CLisas">
+                      <img src="Banner Merlet/Lisa.webp" alt="Producto 5" class="img-fluid product-img"></a>
+                    <div class="product-info text-center">
+                      <h4>Lisa</h4>
+                      <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+                        <a href="" class="btn btn-buy-now learn-more-btn" data-modal="pdfModal5"
+                          data-pdf="Banner Merlet/pdf Lisa.pdf">Learn More</a>
+                        <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CLisas"
+                          class="btn btn-buy-now">Shop Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="col-6 col-sm-6 col-md-3 mb-4">
+                  <div class="product-card h-100">
+                    <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CLisa">
+                      <img src="Banner Merlet/Lisa.webp" alt="Producto 5" class="img-fluid product-img"></a>
+                    <div class="product-info text-center">
+                      <h4>Lisa Kit</h4>
+                      <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+                        <a href="#" class="btn btn-buy-now learn-more-btn" data-modal="pdfModal5"
+                          data-pdf="Banner Merlet/pdf Lisa Kit.pdf">Learn More</a>
+                        <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CLisa"
+                          class="btn btn-buy-now">Shop Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Fin productos inferiores -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Modales para cada tarjeta -->
+        <div class="modal" id="pdfModal1">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Product Details</h5>
+              <button type="button" class="modal-close-btn">×</button>
+            </div>
+            <div class="modal-body">
+              <iframe id="pdfViewer1" src="" width="100%" height="1400px" style="border: none;"></iframe>
+            </div>
+            <div class="modal-footer">
+              <a id="pdfDownload1" href="" download class="btn btn-buy-now">Download PDF</a>
+              <a id="shareBtn1" href="#" class="btn btn-buy-now">Share</a>
+              <a id="printBtn1" href="#" class="btn btn-buy-now">Print</a>
+              <a id="printBtn1" href="#" class="btn btn-buy-now">Request a Fitting</a>
+              <a id="printBtn1" href="#" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="pdfModal2">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Product Details</h5>
+              <button type="button" class="modal-close-btn">×</button>
+            </div>
+            <div class="modal-body">
+              <iframe id="pdfViewer2" src="" width="100%" height="1400px" style="border: none;"></iframe>
+            </div>
+            <div class="modal-footer">
+              <a id="pdfDownload2" href="" download class="btn btn-buy-now">Download PDF</a>
+              <a id="shareBtn2" href="#" class="btn btn-buy-now">Share</a>
+              <a id="printBtn2" href="#" class="btn btn-buy-now">Print</a>
+              <a id="printBtn2" href="#" class="btn btn-buy-now">Request a Fitting</a>
+              <a id="printBtn2" href="#" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="pdfModal3">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Product Details</h5>
+              <button type="button" class="modal-close-btn">×</button>
+            </div>
+            <div class="modal-body">
+              <iframe id="pdfViewer3" src="" width="100%" height="1400px" style="border: none;"></iframe>
+            </div>
+            <div class="modal-footer">
+              <a id="pdfDownload3" href="" download class="btn btn-buy-now">Download PDF</a>
+              <a id="shareBtn3" href="#" class="btn btn-buy-now">Share</a>
+              <a id="printBtn3" href="#" class="btn btn-buy-now">Print</a>
+              <a id="printBtn3" href="#" class="btn btn-buy-now">Request a Fitting</a>
+              <a id="printBtn3" href="#" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="pdfModal4">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Product Details</h5>
+              <button type="button" class="modal-close-btn">×</button>
+            </div>
+            <div class="modal-body">
+              <iframe id="pdfViewer4" src="" width="100%" height="1400px" style="border: none;"></iframe>
+            </div>
+            <div class="modal-footer">
+              <a id="pdfDownload4" href="" download class="btn btn-buy-now">Download PDF</a>
+              <a id="shareBtn4" href="#" class="btn btn-buy-now">Share</a>
+              <a id="printBtn4" href="#" class="btn btn-buy-now">Print</a>
+              <a id="printBtn4" href="#" class="btn btn-buy-now">Request a Fitting</a>
+              <a id="printBtn4" href="#" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal" id="pdfModal5">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Product Details</h5>
+              <button type="button" class="modal-close-btn">×</button>
+            </div>
+            <div class="modal-body">
+              <iframe id="pdfViewer5" src="" width="100%" height="1400px" style="border: none;"></iframe>
+            </div>
+            <div class="modal-footer">
+              <a id="pdfDownload5" href="" download class="btn btn-buy-now">Download PDF</a>
+              <a id="shareBtn5" href="#" class="btn btn-buy-now">Share</a>
+              <a id="printBtn5" href="#" class="btn btn-buy-now">Print</a>
+              <a id="printBtn5" href="#" class="btn btn-buy-now">Request a Fitting</a>
+              <a id="printBtn5" href="#" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+
+          <!-- Modal PDF Producto 6 -->
+          <div class="modal" id="pdfModal6">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Product Details</h5>
+                <button type="button" class="modal-close-btn">×</button>
+              </div>
+              <div class="modal-body">
+                <iframe id="pdfIframe6" src="" width="100%" height="1400px" style="border: none;"></iframe>
+              </div>
+              <div class="modal-footer">
+                <a id="pdfDownload6" href="" download class="btn btn-buy-now">Download PDF</a>
+                <a id="shareBtn6" href="#" class="btn btn-buy-now">Share</a>
+                <a id="printBtn6" href="#" class="btn btn-buy-now">Print</a>
+                <a id="printBtn6" href="#" class="btn btn-buy-now">Request a Fitting</a>
+                <a id="printBtn6" href="#" class="btn btn-buy-now">Shop Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Pointe Shoe Satin Colors-->
+  <!-- GALERIA FILTRABLE -->
+  <section id="galeria-satin" class="py-5">
+    <div class="container-fluid">
+      <div class="text-center mb-4">
+        <h2><a href="https://tudominio.com/satin-colors" target="_blank">Pointe Shoe Satin Colors</a></h2>
+        <p>
+          Any Shoe. Any Color. Please email special make orders:
+          <a href="mailto:merlet@eurotard.com">merlet@eurotard.com</a>
+        </p>
+      </div>
+
+      <!-- Botón 2 -->
+      <div class="filter-buttons2 text-center mb-4">
+        <a href="#contacto" class="filter-btn-alt">Request a Fitting</a>
+      </div>
+
+
+
+      <!-- Galería -->
+      <div class="row gallery-grid">
+        <!-- 1 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=66">
+              <img src="Banner Merlet/907 IVORY.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=66" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">907 / Ivory</h5>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=20">
+              <img src="Banner Merlet/106 : BEIGE.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=206" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">106 / Beige</h5>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/ShowStyle.aspx?style=44922">
+              <img src="Banner Merlet/sienna.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/ShowStyle.aspx?style=44922" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">120 / Sienna</h5>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=69">
+              <img src="Banner Merlet/deep bronze.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=69" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">134 / Deep Bronze</h5>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=18">
+              <img src="Banner Merlet/145 : ESPRESSO.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=18" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">145 / Espresso</h5>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=78">
+              <img src="Banner Merlet/330 : CORAL.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=78" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">330 / Coral</h5>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=41">
+              <img src="Banner Merlet/413 : YELLOW.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=41" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">413 / Yellow</h5>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=18">
+              <img src="Banner Merlet/301 : COPPER.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=18" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">301 / Copper</h5>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=69">
+              <img src="Banner Merlet/222 : RUBY.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=69" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">222 / Ruby</h5>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/ShowStyle.aspx?style=44922">
+              <img src="Banner Merlet/232 : RED.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/ShowStyle.aspx?style=44922" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">232 / Red</h5>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=42">
+              <img src="Banner Merlet/734 : VIOLET.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=42" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">734 / Violet</h5>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=20">
+              <img src="Banner Merlet/733 : PURPLE.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=206" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">733 / Purple</h5>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=78">
+              <img src="Banner Merlet/240 : BURGUNDY.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=78" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">240 / Burgundy</h5>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/default.aspx?id=41">
+              <img src="Banner Merlet/643 : NAVY.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/default.aspx?id=41" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">643 / Navy</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- GALERIA FILTRABLE -->
+
+
+
+
+
+
+
+  <!-- GALERIA CSpark  -->
+  <section id="galeria-cspark" class="py-5">
+    <div class="container-fluid">
+      <div class="text-center mb-4">
+        <h2>CSpark - Decorative Sparkle Pointe Shoe</h2>
+      </div>
+
+
+      <!-- Galería -->
+      <div class="row gallery-grid-cspark">
+        <!-- 1 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item-cspark" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK">
+              <img src="Banner Merlet/051 : Black Multi.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">051 / Black Multi</h5>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item-cspark" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK">
+              <img src="Banner Merlet/415 : Multi.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">451 / Multi</h5>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item-cspark" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK">
+              <img src="Banner Merlet/450 : Diamond.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">450 / Diamond</h5>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item-cspark" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK">
+              <img src="Banner Merlet/817 : Silver.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">817 / Silver</h5>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item-cspark" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK">
+              <img src="Banner Merlet/254 : rose.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">254 / Rose</h5>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item-cspark" data-category="baila">
+          <div class="gallery-img position-relative">
+            <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK">
+              <img src="Banner Merlet/213 : Fuchsia.webp" class="img-fluid" alt="Leotardo Clásico">
+            </a>
+            <div class="overlay always-visible">
+              <a href="https://eurotard.com/v4/Showshoe.aspx?style=CSPARK" class="btn btn-buy-now">Shop Now</a>
+            </div>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h5 class="product-name">213 / Fuchsia</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- GALERIA FILTRABLE -->
+
+
+
+
+
+
+  <!-- FORMULARIO DE CONTACTO-->
+
+  <section id="contacto" class="contact-section">
+    <div class="container">
+      <div class="contact-content">
+        <h2 class="contact-title animate__animated animate__fadeIn">Request a Fitting</h2>
+        <p class="contact-subtext animate__animated animate__fadeIn animate__delay-1s">
+          Professionally fit and only sold in retail stores. For proper fitting, select your size and visit your local
+          retailer.
+        </p>
+        <form id="contactForm" class="contact-form" action="send-contact.php" method="POST">
+
+          <input type="text" name="name" placeholder="Your Name / Store Name / Customer ID" required>
+          <input type="text" name="location" placeholder="Your State / Country" required>
+          <input type="email" name="email" placeholder="Your Email Address" required>
+          <input type="tel" name="phone" placeholder="Your Cell Phone" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn-contact">Send Message</button>
+        </form>
+
+        <div id="formMessage" class="form-message" style="display: none; margin-top: 1rem; color: #ed018c;">
+          Thank you! Your message has been sent.
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FORMULARIO DE CONTACTO-->
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const swiper = new Swiper('.promoSwiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000, // Cambia cada 5 segundos
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+
+
+  <!-- AREA DE REDES SOCIALE-->
+
+  <section id="redes-sociales" class="social-section">
+    <div class="container">
+      <div class="social-content animate__animated animate__fadeInUp">
+        <h2 class="social-title">Follow Us</h2>
+        <p class="social-description">
+          Stay up to date with our latest news, releases, and exclusive promotions on our social media.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/eurotard"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/eurotarddancewear"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/eurotard?s=21"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.pinterest.com/eurotarddancewear/"><i class="fab fa-pinterest-p"></i></a>
+          <a href="https://www.youtube.com/channel/UCO3diPzqqUXHEfwjp4-tfHg?reload=9&view_as=subscriber"><i
+              class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA DE REDES SOCIALE-->
+
+
+
+
+
+
+
+
+  <!-- AREA DE FOOTER-->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="image/Eurotard Merlet Logo .webp" alt="Logo Eurotard">
+      </div>
+
+      <div class="footer-column">
+        <h4>SHOP</h4>
+        <ul>
+          <li><a href="https://eurotard.com/v4/FindAStore.aspx">Stores Near You</a></li>
+          <li><a href="https://eurotard.com/studiosgroups.html">Studio/Group Sales</a></li>
+          <li><a href="#">Wholesale Inquiries</a></li>
+          <li><a href="#">International Sales</a></li>
+          <li><a href="https://www.eurotard.com/catalog/images/size_page.pdf">Size Chart</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>LEARN</h4>
+        <ul>
+          <li><a href="https://eurotard.com/about.html">Mission</a></li>
+          <li><a href="https://eurotard.com/about.html">Our Fabrics</a></li>
+          <li><a href="https://eurotard.com/terms-of-use.html">Terms of Use</a></li>
+          <li><a href="https://eurotard.com/map-policy.html">MAP Policy</a></li>
+          <li><a href="https://eurotard.com/privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>CONNECT</h4>
+        <ul>
+          <li><a href="https://eurotard.com/news.html">News</a></li>
+          <li><a href="https://eurotard.com/careers.html">Careers</a></li>
+          <li><a href="https://eurotard.com/v4/Contact.aspx">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; LYCRA® is a trademark of The LYCRA Company
+        TACTEL® is a trademark of The LYCRA Company and licensed by NILIT®
+
+        Copyright 1982-2021 Eurotard Dancewear, All rights reserved. Photography: Brad Budd, Richard Calmes, Sean
+        McCarthy</p>
+    </div>
+  </footer>
+
+
+
+  <script>
+    const form = document.querySelector(".contact-form");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const data = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          message.innerText = "Message sent successfully!";
+          message.style.color = "green";
+          message.style.display = "block";
+          form.reset();
+        }
+
+      });
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+
+  <script src="index.js"></script>
+  <script src="modal.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.1/dist/js/lightbox.min.js"></script>
+
+
+</body>
+
+</html>
