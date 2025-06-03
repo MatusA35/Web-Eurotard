@@ -1,0 +1,618 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+
+
+/* HEADER Y BARRA DE NAVEGACION */
+/* HEADER Y BARRA DE NAVEGACION */
+/* HEADER Y BARRA DE NAVEGACION */
+
+
+header {
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: static;
+  /* <- CAMBIADO: ya no es sticky */
+  transition: all 0.3s ease-in-out;
+  font-family: "Lato", sans-serif;
+}
+
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-logo {
+  max-width: 400px;
+  /* REDUCIDO desde 520px */
+  height: auto;
+  margin-bottom: -20px;
+  margin-top: -25px;
+}
+
+.logo-phrase {
+  max-width: 250px;
+  /* REDUCIDO desde 300px */
+  height: auto;
+  padding-top: 5px;
+  /* CORREGIDO desde -40px */
+  margin-bottom: -10px;
+}
+
+/* Responsive ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .main-logo {
+    max-width: 300px;
+    /* AUMENTADO desde 160px */
+    /* 👈 Puedes editar aquí el tamaño del logo en móviles */
+  }
+
+  .logo-phrase {
+    max-width: 200px;
+    /* AUMENTADO desde 140px */
+    padding-top: 5px;
+    /* Ajuste para mejor espaciado */
+    margin-bottom: -10;
+    /* 👈 Puedes editar aquí el tamaño de la frase en móviles */
+  }
+}
+
+.navbar {
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #000000;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Alinea el menú hamburguesa a la derecha */
+}
+
+/* ... continúan estilos ya presentes ... */
+
+.navbar-toggler {
+  margin-left: auto;
+  /* Asegura que el botón quede a la derecha */
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 1rem 0;
+  }
+
+  .navbar-nav .nav-link {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  .shop-icon {
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    /* --- NUEVO: Centrar los botones wholesale y sign in dentro del menú hamburguesa --- */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shop-icon ul {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* ESTILO GENERAL COMPARTIDO (Desktop y Móvil) */
+  .button-style {
+    background-color: #9d401f;
+    color: #ffffff !important;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+  }
+
+  /* Efecto hover para ambas versiones */
+  .button-style:hover {
+    filter: brightness(0.95);
+    transform: scale(1.03);
+  }
+
+  /* Estilos específicos solo para móviles */
+  @media (max-width: 991.98px) {
+    .navbar-nav {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 1rem 0;
+    }
+
+    .navbar-nav .nav-link {
+      display: block;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .shop-icon {
+      justify-content: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* <--- aquí está el cambio para centrar */
+    }
+
+    .shop-icon ul {
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+
+  .navbar-collapse {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    margin-top: 0;
+  }
+
+  /* Cuando está abierto */
+  .navbar-collapse.show {
+    max-height: 1000px;
+    /* Muy alto para cubrir todo el menú, evita el corte */
+    opacity: 1;
+    margin-top: 10px;
+  }
+
+  /* Opcional: para suavizar el overflow visible */
+  .navbar-collapse.collapsing {
+    overflow: visible !important;
+  }
+}
+
+.wholesale-btn {
+  background-color: #b2996d;
+  color: #fff;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  /* Evita que el texto se corte o haga salto */
+  font-weight: 500;
+}
+
+.wholesale-btn:hover {
+  background-color: #7c7e81;
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .d-flex.align-items-center.ms-lg-3.gap-3 {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+/* HEADER Y BARRA DE NAVEGACION */
+/* HEADER Y BARRA DE NAVEGACION */
+/* HEADER Y BARRA DE NAVEGACION */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* CONTENEDOR DE IMAGEN */
+.image-fullscreen {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* IMAGEN RESPONSIVA */
+.image-responsive {
+  width: 100%;
+  height: 100vh;
+  object-fit: contain; /* Muestra toda la imagen sin recortarla */
+  display: block;
+  border-radius: 0; /* Puedes cambiarlo si deseas bordes redondos */
+}
+
+/* PARA MÓVILES */
+@media (max-width: 768px) {
+  .image-responsive {
+    height: auto;
+    border-radius: 0;
+  }
+
+  .image-fullscreen {
+    min-height: auto;
+    padding: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FORMULARIO DE CONTACTO*/
+/* FORMULARIO DE CONTACTO*/
+/* FORMULARIO DE CONTACTO*/
+.contact-section {
+  background-color: rgb(165, 165, 165);
+  border-radius: 20px;
+  color: #fff;
+  max-width: 1200px;
+  /* o el ancho que usaste en la sección anterior */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  /* para dejar espacio interno en móviles */
+  padding-right: 10px;
+  /* idem */
+  margin-bottom: -40px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+}
+
+
+.contact-section h2 {
+  color: #ffffff;
+}
+
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+}
+
+.contact-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+/* Formulario */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background-color: #cacaca;
+}
+
+/* Botón */
+.btn-contact {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Lato', sans-serif;
+}
+
+.btn-contact:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .contact-title,
+  .contact-subtext {
+    text-align: center;
+  }
+
+  .btn-contact {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* FORMULARIO DE CONTACTO*/
+/* FORMULARIO DE CONTACTO*/
+/* FORMULARIO DE CONTACTO*/
+
+
+
+
+
+
+
+
+
+/* AREA DE REDES SOCIALES*/
+/* AREA DE REDES SOCIALES*/
+/* AREA DE REDES SOCIALES*/
+.social-section {
+  background-color: transparent;
+  padding: 30px 20px 30px;
+  /* ↓ Reducido padding inferior */
+  text-align: center;
+  color: #000000;
+  margin-top: 40px;
+  /* ↑ Aproxima a la siguiente sección */
+}
+
+.social-title {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+}
+
+.social-description {
+  font-size: 1.2rem;
+  color: #1b1b1b;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f5f4;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.social-icons a {
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: #000;
+  border-radius: 12px;
+  /* esquinas redondeadas */
+  padding: 18px 20px;
+  transition: all 0.3s ease;
+  animation: fadeInIcons 0.6s ease forwards;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background-color: #BA704F;
+  color: #fff;
+}
+
+/* Animación */
+@keyframes fadeInIcons {
+  from {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 576px) {
+  .social-icons a {
+    font-size: 1.4rem;
+    padding: 14px 16px;
+  }
+}
+
+/* AREA DE REDES SOCIALES*/
+/* AREA DE REDES SOCIALES*/
+/* AREA DE REDES SOCIALES*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* AREA DE FOOTER */
+/* AREA DE FOOTER */
+/* AREA DE FOOTER */
+.main-footer {
+  background-color: transparent;
+  padding: 30px 20px 30px;
+  font-family: "Lato", sans-serif;
+  color: #000;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+.footer-column {
+  flex: 1 1 180px;
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #000000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #5b5b5b;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 0.95rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+
+.footer-column ul li a:hover {
+  color: #BA704F;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #7c7e81;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+@media (max-width: 1000px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column,
+  .footer-logo {
+    margin-bottom: 0px;
+
+  }
+
+  .footer-logo img {
+    margin: 0 5px;
+  }
+}
+
+/* AREA DE FOOTER */
+/* AREA DE FOOTER */
+/* AREA DE FOOTER */
