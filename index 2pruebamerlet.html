@@ -522,7 +522,9 @@
         <button type="button" class="modal-close-btn">×</button>
       </div>
       <div class="modal-body">
-        <iframe id="pdfViewer1" src="" width="100%" height="600px" style="border:none;"></iframe>
+        <!-- iframe para escritorio, object para móvil -->
+        <iframe id="pdfViewer1" src="" width="100%" height="600px" style="border:none; display:block;"></iframe>
+        <object id="pdfObject1" data="" type="application/pdf" width="100%" height="600px" style="border:none; display:none;"></object>
       </div>
       <div class="modal-footer">
         <a id="pdfDownload1" href="" download class="btn btn-buy-now">Download PDF</a>
@@ -542,7 +544,8 @@
         <button type="button" class="modal-close-btn">×</button>
       </div>
       <div class="modal-body">
-        <iframe id="pdfViewer2" src="" width="100%" height="600px" style="border:none;"></iframe>
+        <iframe id="pdfViewer2" src="" width="100%" height="600px" style="border:none; display:block;"></iframe>
+        <object id="pdfObject2" data="" type="application/pdf" width="100%" height="600px" style="border:none; display:none;"></object>
       </div>
       <div class="modal-footer">
         <a id="pdfDownload2" href="" download class="btn btn-buy-now">Download PDF</a>
@@ -562,7 +565,8 @@
         <button type="button" class="modal-close-btn">×</button>
       </div>
       <div class="modal-body">
-        <iframe id="pdfViewer3" src="" width="100%" height="600px" style="border:none;"></iframe>
+        <iframe id="pdfViewer3" src="" width="100%" height="600px" style="border:none; display:block;"></iframe>
+        <object id="pdfObject3" data="" type="application/pdf" width="100%" height="600px" style="border:none; display:none;"></object>
       </div>
       <div class="modal-footer">
         <a id="pdfDownload3" href="" download class="btn btn-buy-now">Download PDF</a>
@@ -582,14 +586,15 @@
         <button type="button" class="modal-close-btn">×</button>
       </div>
       <div class="modal-body">
-        <iframe id="pdfViewer4" src="" width="100%" height="600px" style="border:none;"></iframe>
+        <iframe id="pdfViewer4" src="" width="100%" height="600px" style="border:none; display:block;"></iframe>
+        <object id="pdfObject4" data="" type="application/pdf" width="100%" height="600px" style="border:none; display:none;"></object>
       </div>
       <div class="modal-footer">
         <a id="pdfDownload4" href="" download class="btn btn-buy-now">Download PDF</a>
         <a id="shareBtn4" href="#" class="btn btn-buy-now">Share</a>
         <a id="printBtn4" href="#" class="btn btn-buy-now">Print</a>
         <a href="#contacto" class="btn btn-buy-now">Request a Fitting</a>
-        <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CLana" class="btn btn-buy-now">Shop Now</a>
+        <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CDiva" class="btn btn-buy-now">Shop Now</a>
       </div>
     </div>
   </div>
@@ -602,93 +607,104 @@
         <button type="button" class="modal-close-btn">×</button>
       </div>
       <div class="modal-body">
-        <iframe id="pdfViewer5" src="" width="100%" height="600px" style="border:none;"></iframe>
+        <iframe id="pdfViewer5" src="" width="100%" height="600px" style="border:none; display:block;"></iframe>
+        <object id="pdfObject5" data="" type="application/pdf" width="100%" height="600px" style="border:none; display:none;"></object>
       </div>
       <div class="modal-footer">
         <a id="pdfDownload5" href="" download class="btn btn-buy-now">Download PDF</a>
         <a id="shareBtn5" href="#" class="btn btn-buy-now">Share</a>
         <a id="printBtn5" href="#" class="btn btn-buy-now">Print</a>
         <a href="#contacto" class="btn btn-buy-now">Request a Fitting</a>
-        <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CLisa" class="btn btn-buy-now">Shop Now</a>
+        <a href="https://www.eurotard.com/V4/SignOn.aspx?ret=./Showshoe.aspx?style=CLisas" class="btn btn-buy-now">Shop Now</a>
       </div>
     </div>
   </div>
 </div>
 
   
-  <script>
-    // Abrir modal y cargar PDF dinámicamente
-    document.querySelectorAll('.btn-learn-more').forEach(button => {
-      button.addEventListener('click', () => {
-        const modalId = button.dataset.modal;
-        const pdfUrl = button.dataset.pdf;
-        const modal = document.getElementById(modalId);
-  
-        if (!modal) return;
-  
-        // Mostrar modal
-        modal.style.display = 'flex';
-        modal.setAttribute('aria-hidden', 'false');
-  
-        // Actualizar iframe con PDF
-        const iframe = modal.querySelector('iframe');
-        iframe.src = pdfUrl;
-  
-        // Actualizar link descarga
-        const downloadLink = modal.querySelector('.btn-download');
-        downloadLink.href = pdfUrl;
-  
-        // Opcional: actualizar título si quieres sincronizar dinámicamente
-        const title = button.parentElement.querySelector('h3').textContent;
-        const modalTitle = modal.querySelector('h2');
-        if (modalTitle) modalTitle.textContent = title;
-      });
+<script>
+  // Abrir modal y cargar PDF dinámicamente
+  document.querySelectorAll('.btn-learn-more').forEach(button => {
+    button.addEventListener('click', () => {
+      const modalId = button.dataset.modal;
+      const pdfUrl = button.dataset.pdf;
+      const modal = document.getElementById(modalId);
+
+      if (!modal) return;
+
+      // Mostrar modal
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+      modal.querySelector('.modal-close-btn')?.focus();
+
+      // Actualizar iframe con PDF
+      const iframe = modal.querySelector('iframe');
+      if (iframe) iframe.src = pdfUrl;
+
+      // Actualizar link descarga
+      const downloadLink = modal.querySelector('.btn-download');
+      if (downloadLink) downloadLink.href = pdfUrl;
+
+      // Actualizar título dinámicamente
+      const title = button.parentElement.querySelector('h3')?.textContent;
+      const modalTitle = modal.querySelector('h2');
+      if (modalTitle && title) modalTitle.textContent = title;
     });
-  
-    // Cerrar modal al hacer click en la X o fuera del contenido
-    document.querySelectorAll('.modal').forEach(modal => {
-      const closeBtn = modal.querySelector('.modal-close-btn');
+  });
+
+  // Cerrar modal al hacer click en la X o fuera del contenido
+  document.querySelectorAll('.modal').forEach(modal => {
+    const closeBtn = modal.querySelector('.modal-close-btn');
+    if (closeBtn) {
       closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
         modal.setAttribute('aria-hidden', 'true');
-  
+
         // Limpiar iframe para detener carga PDF
         const iframe = modal.querySelector('iframe');
-        iframe.src = '';
+        if (iframe) iframe.src = '';
       });
-  
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-          modal.setAttribute('aria-hidden', 'true');
-          const iframe = modal.querySelector('iframe');
-          iframe.src = '';
-        }
-      });
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+
+        const iframe = modal.querySelector('iframe');
+        if (iframe) iframe.src = '';
+      }
     });
-  
-    // Opcional: funciones para Share y Print dentro del modal
-    document.querySelectorAll('.btn-share').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert('Función de compartir próximamente');
-      });
+  });
+
+  // Función Share (por ahora solo alerta)
+  document.querySelectorAll('.btn-share').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Función de compartir próximamente');
     });
-  
-    document.querySelectorAll('.btn-print').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const iframe = btn.closest('.modal-content').querySelector('iframe');
-        if (iframe && iframe.src) {
-          const printWindow = window.open(iframe.src);
+  });
+
+  // Función imprimir PDF
+  document.querySelectorAll('.btn-print').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const iframe = btn.closest('.modal-content').querySelector('iframe');
+      if (iframe && iframe.src) {
+        const printWindow = window.open(iframe.src);
+        if (printWindow) {
           printWindow.focus();
           printWindow.print();
         } else {
-          alert('No hay documento para imprimir');
+          alert('No se pudo abrir la ventana de impresión. Por favor, desactiva el bloqueador de ventanas emergentes.');
         }
-      });
+      } else {
+        alert('No hay documento para imprimir');
+      }
     });
-  </script>
+  });
+</script>
+
   
   
 
