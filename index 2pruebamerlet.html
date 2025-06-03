@@ -640,42 +640,84 @@
   </section>
   
   <script>
-    // Manejo de modales para Learn More con PDF en iframe
-    document.querySelectorAll('.btn-learn-more').forEach(button => {
-      button.addEventListener('click', () => {
-        const modalId = button.getAttribute('data-modal');
-        const pdfPath = button.getAttribute('data-pdf');
-        const modal = document.getElementById(modalId);
-        if (modal) {
-          modal.querySelector('iframe').src = pdfPath;
-          modal.querySelector('a[download]').href = pdfPath;
-          modal.classList.add('open'); // Abre el modal centrado
-          modal.setAttribute('aria-hidden', 'false');
-        }
-      });
-    });
-  
-    document.querySelectorAll('.modal-close-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const modal = btn.closest('.modal');
-        if (modal) {
-          modal.classList.remove('open'); // Cierra el modal
-          modal.setAttribute('aria-hidden', 'true');
-          modal.querySelector('iframe').src = ''; // limpiar iframe
-        }
-      });
-    });
-  
-    // Cerrar modal si se hace clic fuera del contenido
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.classList.remove('open');
-          modal.setAttribute('aria-hidden', 'true');
-          modal.querySelector('iframe').src = '';
-        }
-      });
-    });
+  document.querySelectorAll('.btn-learn-more').forEach(button => {
+  button.addEventListener('click', () => {
+    const modalId = button.getAttribute('data-modal');
+    const pdfPath = button.getAttribute('data-pdf');
+    const modal = document.getElementById(modalId);
+
+    if (modal) {
+      // Mostrar modal
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+
+      // Cargar PDF en iframe
+      const iframe = modal.querySelector('iframe');
+      iframe.src = pdfPath;
+
+      // Actualizar enlaces de descarga, compartir e imprimir
+      const downloadLink = modal.querySelector('a[download]');
+      if (downloadLink) {
+        downloadLink.href = pdfPath;
+      }
+
+      const shareBtn = modal.querySelector('a.btn-buy-now[href="#"]');
+      if (shareBtn) {
+        shareBtn.href = pdfPath;
+        shareBtn.onclick = (e) => {
+          e.preventDefault();
+          if (navigator.share) {
+            navigator.share({
+              title: 'Product PDF',
+              url: pdfPath,
+            }).catch(console.error);
+          } else {
+            alert('Sharing not supported in this browser.');
+          }
+        };
+      }
+
+      const printBtn = modal.querySelector('a.btn-buy-now[href="#"]:nth-of-type(3)');
+      if (printBtn) {
+        printBtn.href = '#';
+        printBtn.onclick = (e) => {
+          e.preventDefault();
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+        };
+      }
+    }
+  });
+});
+
+// Funcionalidad para cerrar modales
+document.querySelectorAll('.modal-close-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal');
+    if (modal) {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      
+      // Limpiar iframe para liberar recursos
+      const iframe = modal.querySelector('iframe');
+      iframe.src = '';
+    }
+  });
+});
+
+// Cerrar modal si se hace click fuera del contenido
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+
+      const iframe = modal.querySelector('iframe');
+      iframe.src = '';
+    }
+  });
+});
+
   </script>
   
   
