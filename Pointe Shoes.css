@@ -425,19 +425,39 @@ body, html {
 
 
 
-/* Pointe Shoe Satin Colors */
-/* Pointe Shoe Satin Colors */
+
+
+
+
+
 /* Pointe Shoe Satin Colors */
 /* ===== CONTENEDOR GALERÍA ===== */
 
+#galeria-satin {
+  border-radius: 20px;
+  margin-top: -120px; /* Sube toda la sección */
+  padding: 10px; /* ↓ Reducido padding inferior */
+}
+
+.gallery-item {
+  margin-bottom: -10px; /* Cambia 20px por el espacio que quieras */
+}
+h2 a {
+  color: inherit; /* mantiene el color del h2 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+h2 a:hover {
+  color: #7c7e81; /* o cualquier color que prefieras */
+}
 
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 30px 0px 30px; /* ↓ Reducido padding inferior */
+  gap: 10px;
+  padding: 30px 0px 30px;
 }
-
 
 /* ===== IMAGEN GALERÍA ===== */
 .gallery-img {
@@ -483,6 +503,13 @@ body, html {
   opacity: 1;
 }
 
+/* Make overlay and button always visible on mobile */
+@media (max-width: 767px) {
+  .overlay {
+    opacity: 1;
+  
+  }
+}
 
 /* ===== BOTÓN COMPRAR AHORA ===== */
 .btn-buy-now {
@@ -501,11 +528,8 @@ body, html {
   font-family: 'Lato', sans-serif;
 }
 
-
-
 /* ===== INFO EXTRA PRODUCTO ===== */
-
-.product-info h4 { /*nombre zapatillas */
+.product-info h4 {
   font-size: 1rem;
   font-weight: 400;
   color: #000000;
@@ -513,10 +537,7 @@ body, html {
   font-family: 'Lato', sans-serif;
 }
 
-
-
-/* Estilo del texto bajo cada imagen 
-Pointe Shoe Satin Colors - CSpark */
+/* Estilo del texto bajo cada imagen */
 .product-name {
   font-size: 1rem;
   font-weight: 400;
@@ -525,8 +546,6 @@ Pointe Shoe Satin Colors - CSpark */
   margin-top: -15px;
   font-family: 'Lato', sans-serif;
 }
-
-
 
 /* ===== LINKS SIN SUBRAYADO ===== */
 #galeria a {
@@ -558,10 +577,10 @@ Pointe Shoe Satin Colors - CSpark */
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.08);
   width: 90%;
   max-width: 900px;
-  max-height: 1150px;
+  max-height: 95vh; /* Increased from 90vh for larger vertical size */
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* evita que todo el contenido se desborde */
+  overflow: hidden;
 }
 
 .modal-body {
@@ -569,9 +588,6 @@ Pointe Shoe Satin Colors - CSpark */
   overflow-y: auto;
   flex: 1;
 }
-
-/* Resto igual */
-
 
 .modal-header,
 .modal-footer {
@@ -603,17 +619,13 @@ Pointe Shoe Satin Colors - CSpark */
   color: #7c7e81;
 }
 
-.modal-body {
-  padding: 3rem;
-}
-
 #pdfViewer1,
 #pdfViewer2,
 #pdfViewer3,
 #pdfViewer4,
 #pdfViewer5 {
   width: 100%;
-  height: 1400px;
+  height: 1000px; /* Increased from 1400px to a more manageable height */
   border-radius: 10px;
 }
 
@@ -662,11 +674,71 @@ Pointe Shoe Satin Colors - CSpark */
     max-width: 100%;
     width: 100%;
   }
-
   .btn-buy-now {
     padding: 12px 25px;
     font-size: 14px;
     text-align: center;
+  }
+  .modal-content {
+    width: 95%;
+    max-height: 98vh; /* Increased for larger vertical size on mobile */
+  }
+  .modal-body {
+    padding: 1rem;
+  }
+  #pdfViewer1,
+  #pdfViewer2,
+  #pdfViewer3,
+  #pdfViewer4,
+  #pdfViewer5 {
+    height: 700px; /* Adjusted for mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  .btn-buy-now {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+  .product-info h4,
+  .product-name {
+    font-size: 0.9rem;
+  }
+  #pdfViewer1,
+  #pdfViewer2,
+  #pdfViewer3,
+  #pdfViewer4,
+  #pdfViewer5 {
+    height: 500px; /* Adjusted for smaller screens */
+  }
+  .modal-content {
+    max-height: 95vh; /* Slightly reduced to ensure usability */
+  }
+}
+
+@media (max-width: 360px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .btn-buy-now {
+    padding: 8px 15px;
+    font-size: 11px;
+  }
+  .product-info h4,
+  .product-name {
+    font-size: 0.85rem;
+  }
+  #pdfViewer1,
+  #pdfViewer2,
+  #pdfViewer3,
+  #pdfViewer4,
+  #pdfViewer5 {
+    height: 400px; /* Further reduced for very small screens */
   }
 }
 
@@ -677,43 +749,11 @@ Pointe Shoe Satin Colors - CSpark */
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*<!-- Pointe Shoe Satin Colors--> */
 /*<!-- Pointe Shoe Satin Colors--> */
 /*<!-- Pointe Shoe Satin Colors--> */
 
 
-#galeria-satin {
-  border-radius: 20px;
-  margin-top: -120px; /* Sube toda la sección */
-  padding: 30px 40px 30px; /* ↓ Reducido padding inferior */
-}
-
-.gallery-item {
-  margin-bottom: -10px; /* Cambia 20px por el espacio que quieras */
-}
-h2 a {
-  color: inherit; /* mantiene el color del h2 */
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-h2 a:hover {
-  color: #7c7e81; /* o cualquier color que prefieras */
-}
 
 
 
@@ -737,7 +777,7 @@ h2 a:hover {
   border-radius: 20px;
   margin-top: -90px; /* Sube toda la sección */
   margin-bottom: 20px; /* Puedes ajustar este también si quieres separar del siguiente bloque */
-  padding: 30px 40px 30px; /* ↓ Reducido padding inferior */
+  padding: 10px; /* ↓ Reducido padding inferior */
 }
 #galeria-cspark a{
   text-decoration: none;
@@ -775,18 +815,16 @@ h2 a:hover {
 
 
 
-/* AREA DE CONTACTANOS*/
-/* Fondo negro elegante */
+/* FORMULARIO DE CONTACTO*/
+/* FORMULARIO DE CONTACTO*/
+/* FORMULARIO DE CONTACTO*/
 .contact-section {
   background-color:rgb(165, 165, 165);
   border-radius: 20px;
   color: #fff;
-  padding: 30px 10px 20px;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: -10px;
+  padding: 30px 10px;
+  margin-bottom: -20px;
   margin-top: -70px;
-
 
 }
 
@@ -810,7 +848,7 @@ h2 a:hover {
 }
 
 .contact-subtext {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 40px;
   color: #ffffff;
   font-family: 'Lato', sans-serif;
@@ -870,16 +908,20 @@ h2 a:hover {
     margin: 0 auto;
   }
 }
-/* Formulario */
+/* FORMULARIO DE CONTACTO*/
+/* FORMULARIO DE CONTACTO*/
+/* FORMULARIO DE CONTACTO*/
+
+
+
 
 
 
 
 
 /* AREA DE REDES SOCIALES*/
-
-/* === INICIO: AREA DE REDES SOCIALES === */
-
+/* AREA DE REDES SOCIALES*/
+/* AREA DE REDES SOCIALES*/
 .social-section {
   background-color: transparent;
   padding: 30px 20px 30px; /* ↓ Reducido padding inferior */
@@ -891,12 +933,12 @@ h2 a:hover {
 .social-title {
   font-size: 2.2rem;
   margin-bottom: 10px;
-  font-weight: 600;
+  font-weight: 400;
   font-family: 'Lato', sans-serif;
 }
 
 .social-description {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #1b1b1b;
   margin-bottom: 30px;
   max-width: 800px;
@@ -906,14 +948,29 @@ h2 a:hover {
   font-weight: 300;
 }
 
-/* Íconos */
 .social-icons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px; /* Aumentamos separación entre íconos */
-  margin-top: 20px;
+  gap: 30px;
+  margin-top: 10px;
 }
+
+.social-icons a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f5f4;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
 
 .social-icons a {
   font-size: 1.6rem;
@@ -953,10 +1010,8 @@ h2 a:hover {
     padding: 14px 16px;
   }
 }
-
-/* === FIN: AREA DE REDES SOCIALES === */
-
-
+/* AREA DE REDES SOCIALES*/
+/* AREA DE REDES SOCIALES*/
 /* AREA DE REDES SOCIALES*/
 
 
@@ -968,9 +1023,9 @@ h2 a:hover {
 
 
 
-
 /* AREA DE FOOTER */
-
+/* AREA DE FOOTER */
+/* AREA DE FOOTER */
 .main-footer {
   background-color:transparent;
   padding: 30px 20px 30px;
@@ -1063,6 +1118,8 @@ h2 a:hover {
     margin: 0 5px;
   }
 }
+/* AREA DE FOOTER */
+/* AREA DE FOOTER */
 /* AREA DE FOOTER */
 
 
