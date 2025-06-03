@@ -284,7 +284,7 @@ body, html {
 /* --- Featured Products --- */
 
 .py-5 {
-  margin-top: -20px;
+  margin-top: -30px;
   }
 
 
@@ -786,15 +786,22 @@ body, html {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
+
+  /* Centrar el modal */
+  display: flex;
   align-items: center;
   justify-content: center;
+
+  /* Padding para que no quede pegado en móviles */
+  padding: 1rem;
+
   font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
 }
 
 .modal.open {
   display: flex;
 }
-
 
 .modal-content {
   background-color: #ffffff;
@@ -802,10 +809,11 @@ body, html {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.08);
   width: 90%;
   max-width: 900px;
-  max-height: 1150px;
+  max-height: 90vh; /* Altura máxima para que en móviles se ajuste */
   display: flex;
   flex-direction: column;
   overflow: hidden; /* evita que todo el contenido se desborde */
+  margin: auto; /* para asegurar centrado */
 }
 
 .modal-body {
@@ -815,7 +823,6 @@ body, html {
 }
 
 /* Resto igual */
-
 
 .modal-header,
 .modal-footer {
@@ -912,25 +919,32 @@ body, html {
     font-size: 14px;
     text-align: center;
   }
-}
 
-
-@media (max-width: 767px) {
+  /* Asegurar que el iframe o object no quede cortado en móviles */
   .modal-body iframe {
     display: none !important;
   }
   .modal-body object {
     display: block !important;
+    width: 100%;
+    height: 80vh; /* altura adaptada para móviles */
   }
 }
+
 @media (min-width: 768px) {
   .modal-body iframe {
     display: block !important;
+    width: 100%;
+    height: 1400px;
   }
   .modal-body object {
     display: none !important;
   }
 }
+
+
+
+
 
 
 
