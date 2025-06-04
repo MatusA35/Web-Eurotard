@@ -12,8 +12,7 @@
 header {
   background-color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  position: static;
-  /* <- CAMBIADO: ya no es sticky */
+  position: static; /* <- CAMBIADO: ya no es sticky */
   transition: all 0.3s ease-in-out;
   font-family: "Lato", sans-serif;
 }
@@ -25,37 +24,38 @@ header {
 }
 
 .main-logo {
-  max-width: 400px;
-  /* REDUCIDO desde 520px */
+  max-width: 400px; /* REDUCIDO desde 520px */
   height: auto;
   margin-bottom: -20px;
-  margin-top: -25px;
+  margin-top: -20px;
+}
+.logo-subtext .logo-phrase {
+  max-width: 250px; 
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
 }
 
+
 .logo-phrase {
-  max-width: 250px;
-  /* REDUCIDO desde 300px */
+  max-width: 200px; /* REDUCIDO desde 300px */
   height: auto;
-  padding-top: 5px;
-  /* CORREGIDO desde -40px */
+  margin-top: -15px;
   margin-bottom: -10px;
 }
 
 /* Responsive ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
   .main-logo {
-    max-width: 300px;
-    /* AUMENTADO desde 160px */
-    /* 👈 Puedes editar aquí el tamaño del logo en móviles */
+    max-width: 300px; /* AUMENTADO desde 160px */
+  /* 👈 Puedes editar aquí el tamaño del logo en móviles */
   }
 
   .logo-phrase {
-    max-width: 200px;
-    /* AUMENTADO desde 140px */
-    padding-top: 5px;
-    /* Ajuste para mejor espaciado */
-    margin-bottom: -10;
-    /* 👈 Puedes editar aquí el tamaño de la frase en móviles */
+    max-width: 200px; /* AUMENTADO desde 140px */
+    padding-top: 5px; /* Ajuste para mejor espaciado */
+    margin-bottom: -10;/* 👈 Puedes editar aquí el tamaño de la frase en móviles */
   }
 }
 
