@@ -957,7 +957,7 @@ body, html {
   background-color: #b2996d; /* Color de fondo */
   color: #fff; /* Color del texto */
   border-radius: 6px;
-  padding: 10px 10px;
+  padding: 10px 20px;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
@@ -966,18 +966,17 @@ body, html {
   text-decoration: none;
   border: none;
 }
-
+.botones-container a{
+  color: #ffffff;
+  margin-bottom: 10px;
+}
 /* Hover: al pasar el cursor */
 .wholesale-btn:hover {
   background-color: #ffffff;
   color: #fff;
 }
 
-/* Ajuste del contenedor de los botones */
-.d-flex.align-items-center.gap-3 {
-  gap: 1.5rem; /* Espacio entre los botones */
-  margin-top: 5px;
-}
+
 
 /* Responsivo: en pantallas pequeñas que los botones se vean en columna */
 @media (max-width: 576px) {
@@ -999,7 +998,7 @@ body, html {
 }
 
 section img {
-  width: 25%; /* ocupa todo el ancho de la sección */
+  width: 22%; /* ocupa todo el ancho de la sección */
   height: auto;
   margin-bottom: 10px;
 }
