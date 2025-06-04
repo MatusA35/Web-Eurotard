@@ -287,6 +287,11 @@ body, html {
   margin-top: -20px;
   }
 
+#galeria a[href^="mailto:"] {
+  text-decoration: none !important;
+}
+
+
 
 
 /* Estilos para el título con enlace */
@@ -486,14 +491,18 @@ body, html {
   color: white;
 }
 
+
+
 .filter-btn-alt:hover {
-  background-color: #000000;
-  color: white;
+  color: #fff; /* Cambia este valor al color que desees en hover */
+  background-color: #000; /* Opcional: cambia también el fondo */
 }
 
 
-
-
+.filter-btn-alt:hover {
+  color: #fff !important;
+  background-color: #000 !important;
+}
 
 
 

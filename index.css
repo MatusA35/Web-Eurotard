@@ -997,11 +997,11 @@ body, html {
   margin-top: 10px; /* Puedes ajustar el valor */
 }
 
-section img {
-  width: 22%; /* ocupa todo el ancho de la sección */
-  height: auto;
-  margin-bottom: 10px;
+.img-delivery {
+  width: 64px;  /* nuevo ancho */
+  height: 64px; /* nuevo alto */
 }
+
 
 
 
