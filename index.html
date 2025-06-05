@@ -6,7 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eurotard </title>
   <!-- bootstrap css link  -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JS (para el menú desplegable) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS (para el menú desplegable) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
   <!-- fontawsome cdn link  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -123,145 +129,182 @@
     </div>
 
 
-    <header>
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-    
-              <!-- Dance -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownDance" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dance
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownDance">
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">Eurotard Shoes</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">Merlet Shoes</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=leotard">Leotards</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=69">Tights</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=54">Skirts</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=shorts">Shorts</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=2">Leggings</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=41">Undergarments</a></li>
-                  <li><a class="dropdown-item" href=" https://www.eurotard.com/v4/default.aspx?id=72">Toe Pads</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=18">Warm-Ups & Knits</a></li>
-                </ul>
-              </li>
-    
-              <!-- Tights -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownTights" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Tights
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownTights">
-                  <li><a class="dropdown-item" href="https://www.eurotard.com/v4/default.aspx?id=69">All Tights</a></li>
-                  <li><a class="dropdown-item" href="https://www.eurotard.com/v4/default.aspx?id=115">True Non-Run® Tights</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=114">Shimmer Tights</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=120">Specialty Tights</a></li>
-                  <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=33940%2033940c%2034943
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+
+            <!-- Dance -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownDance" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Dance
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownDance">
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">Eurotard Shoes</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">Merlet Shoes</a></li>
+                <li><a class="dropdown-item"
+                    href="https://eurotard.com/v4/SearchResults.aspx?search=leotard">Leotards</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=69">Tights</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=54">Skirts</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=shorts">Shorts</a>
+                </li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=2">Leggings</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=41">Undergarments</a></li>
+                <li><a class="dropdown-item" href=" https://www.eurotard.com/v4/default.aspx?id=72">Toe Pads</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=18">Warm-Ups & Knits</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Tights -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownTights" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Tights
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownTights">
+                <li><a class="dropdown-item" href="https://www.eurotard.com/v4/default.aspx?id=69">All Tights</a></li>
+                <li><a class="dropdown-item" href="https://www.eurotard.com/v4/default.aspx?id=115">True Non-Run®
+                    Tights</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=114">Shimmer Tights</a>
+                </li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=120">Specialty Tights</a>
+                </li>
+                <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=33940%2033940c%2034943
                     ">Boys & Men Tights</a></li>
-                </ul>
-              </li>
-    
-              <!-- Shoes -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownShoes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Shoes
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownShoes">
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">All Eurotard Shoes</a></li>
-                  <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=A2001a%20A2001c%20A2011a%20A2011c%20A2004a%20A2004c%20A1004a%20A1004c
+              </ul>
+            </li>
+
+            <!-- Shoes -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownShoes" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Shoes
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownShoes">
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=9">All Eurotard Shoes</a>
+                </li>
+                <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=A2001a%20A2001c%20A2011a%20A2011c%20A2004a%20A2004c%20A1004a%20A1004c
                     ">Ballet</a></li>
-                  <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=A2054a%20A2054c
+                <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=A2054a%20A2054c
                     ">Jazz</a></li>
-                  <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=A1062%20A2062
+                <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=A1062%20A2062
                     ">Half Soles</a></li>
-                  <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=A3509a%20A3509c%20A5511a%20A5511c%20A5524a%20A5524c%20A5531a%20A5531c
+                <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=A3509a%20A3509c%20A5511a%20A5511c%20A5524a%20A5524c%20A5531a%20A5531c
                     ">Tap</a></li>
-                  <li><a class="dropdown-item" href="https://www.eurotard.com/v4/SearchResults.aspx?search=A2213a%20A2213c%20A2223a">Character</a></li>
-                  <li><a class="dropdown-item" href="index Pointe Shoes.html">Merlet Pointe Shoes</a></li>
-                  <li><a class="dropdown-item" href="https://www.eurotard.com/v4/default.aspx?id=118">Merlet Ballroom Shoes</a></li>
-                </ul>
-              </li>
-    
-              <!-- Merlet -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownMerlet" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Merlet
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMerlet">
-                  <li><a class="dropdown-item" href="index Pointe Shoes.html">Pointe Shoes</a></li>
-                  <li><a class="dropdown-item" href="https://www.eurotard.com/v4/default.aspx?id=118">Ballroom Shoes</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=Z-PT%20ZLISA%20CSPARK%20Z-ELRB%20Z-ELIN%20Z-RCEL%20Z-BS%20Z-OUP%20Z-BC%20Z-BM%20Z-ST%20ZSP900">Accessories</a></li>
-                </ul>
-              </li>
-    
-              <!-- Praise -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownPraise" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Praise
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownPraise">
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=90">Dresses</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=13778%2013674%2008803%2008804%2013806%2014808%2014768%2084768%2013768%2039746%2039768%2039769%2086902">Skirts</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=97567%2091567%2063567%2079567%2081116%2085567%2013848%2013118%2019115%2014141%2014824%2013830%2013813%2013831%2013736%2013673%2013730%2013845%2013826%2044100">Tops & Tunics</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=14691%2013846%2013842%2013696%2013843">Pants & Jumpsuits</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=B5555%20B1102%20B1104%20B1105%2083557%2024787%2084768%2013768%2065768%2048768%2073768%2014768%2014808%2014739%2013800%2013739%2039768%2039769 ">Overlays</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=125">Unitards</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=41">Undergarments</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=A2001%20A2004%20A1004%20A2054%20A1062%20A2062">Shoes</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/SearchResults.aspx?search=13cb%20B1733%2073741%2014741%2014770%2013733%2039001%2013744%2013745%2013828%2013910%2013pg%2013901%2013902%2013flm%2013flag">Accessories</a></li>
-                </ul>
-              </li>
-    
-              <!-- Otras secciones -->
-              <li class="nav-item"><a class="nav-link" href="https://www.eurotard.com/v4/default.aspx?id=78">Gymnastics</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://www.eurotard.com/v4/embroidery.aspx">Embroidery</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://www.eurotard.com/v4/default.aspx?id=77">Shapewear</a></li>
-    
-              <!-- Studio & Groups -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownStudio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Studio & Groups
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownStudio">
-                  <li><a class="dropdown-item" href="https://eurotard.com/studiosgroups.html">Dress Code Solution</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/studio-forms.html">Studio/Group Forms</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/faq.html">FAQ</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/FindAClass.aspx">Find My Studio</a></li>
-                  <li><a class="dropdown-item" href="https://eurotard.com/v4/classuniform.aspx">Find My Dress Code</a></li>
-                </ul>
-              </li>
-    
-              <!-- Materials -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownMaterials" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Materials
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMaterials">
-                  <li><a class="dropdown-item" href="index Materials Microfiber.html">USA Microfiber Fibers</a></li>
-                  <li><a class="dropdown-item" href="index Materials Cotton.html">USA Cotton Fibers</a></li>
-                  <li><a class="dropdown-item" href="index Materials Polyester.html">USA Polyester Fibers</a></li>
-                  <li><a class="dropdown-item" href="index Other Materials.html">Other Materials</a></li>
-                </ul>
-              </li>
-            </ul>
-    
-            <!-- Botones de Wholesale y Sign In -->
-            <div class="d-flex align-items-center ms-lg-3 gap-3">
-              <a href="https://eurotard.com/v4/SignOn.aspx" class="nav-link wholesale-btn px-3 py-1">Wholesale</a>
-              <a href="https://eurotard.com/v4/SignOn.aspx" class="nav-link wholesale-btn px-3 py-1">Sign In</a>
-            </div>
+                <li><a class="dropdown-item"
+                    href="https://www.eurotard.com/v4/SearchResults.aspx?search=A2213a%20A2213c%20A2223a">Character</a>
+                </li>
+                <li><a class="dropdown-item" href="index Pointe Shoes.html">Merlet Pointe Shoes</a></li>
+                <li><a class="dropdown-item" href="https://www.eurotard.com/v4/default.aspx?id=118">Merlet Ballroom
+                    Shoes</a></li>
+              </ul>
+            </li>
+
+            <!-- Merlet -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMerlet" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Merlet
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMerlet">
+                <li><a class="dropdown-item" href="index Pointe Shoes.html">Pointe Shoes</a></li>
+                <li><a class="dropdown-item" href="https://www.eurotard.com/v4/default.aspx?id=118">Ballroom Shoes</a>
+                </li>
+                <li><a class="dropdown-item"
+                    href="https://eurotard.com/v4/SearchResults.aspx?search=Z-PT%20ZLISA%20CSPARK%20Z-ELRB%20Z-ELIN%20Z-RCEL%20Z-BS%20Z-OUP%20Z-BC%20Z-BM%20Z-ST%20ZSP900">Accessories</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Praise -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownPraise" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Praise
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownPraise">
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=90">Dresses</a></li>
+                <li><a class="dropdown-item"
+                    href="https://eurotard.com/v4/SearchResults.aspx?search=13778%2013674%2008803%2008804%2013806%2014808%2014768%2084768%2013768%2039746%2039768%2039769%2086902">Skirts</a>
+                </li>
+                <li><a class="dropdown-item"
+                    href="https://eurotard.com/v4/SearchResults.aspx?search=97567%2091567%2063567%2079567%2081116%2085567%2013848%2013118%2019115%2014141%2014824%2013830%2013813%2013831%2013736%2013673%2013730%2013845%2013826%2044100">Tops
+                    & Tunics</a></li>
+                <li><a class="dropdown-item"
+                    href="https://eurotard.com/v4/SearchResults.aspx?search=14691%2013846%2013842%2013696%2013843">Pants
+                    & Jumpsuits</a></li>
+                <li><a class="dropdown-item"
+                    href="https://eurotard.com/v4/SearchResults.aspx?search=B5555%20B1102%20B1104%20B1105%2083557%2024787%2084768%2013768%2065768%2048768%2073768%2014768%2014808%2014739%2013800%2013739%2039768%2039769 ">Overlays</a>
+                </li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=125">Unitards</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/default.aspx?id=41">Undergarments</a></li>
+                <li><a class="dropdown-item"
+                    href="https://eurotard.com/v4/SearchResults.aspx?search=A2001%20A2004%20A1004%20A2054%20A1062%20A2062">Shoes</a>
+                </li>
+                <li><a class="dropdown-item"
+                    href="https://eurotard.com/v4/SearchResults.aspx?search=13cb%20B1733%2073741%2014741%2014770%2013733%2039001%2013744%2013745%2013828%2013910%2013pg%2013901%2013902%2013flm%2013flag">Accessories</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Otras secciones -->
+            <li class="nav-item"><a class="nav-link"
+                href="https://www.eurotard.com/v4/default.aspx?id=78">Gymnastics</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.eurotard.com/v4/embroidery.aspx">Embroidery</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="https://www.eurotard.com/v4/default.aspx?id=77">Shapewear</a>
+            </li>
+
+            <!-- Studio & Groups -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownStudio" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Studio & Groups
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownStudio">
+                <li><a class="dropdown-item" href="https://eurotard.com/studiosgroups.html">Dress Code Solution</a>
+                </li>
+                <li><a class="dropdown-item" href="https://eurotard.com/studio-forms.html">Studio/Group Forms</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/faq.html">FAQ</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/FindAClass.aspx">Find My Studio</a></li>
+                <li><a class="dropdown-item" href="https://eurotard.com/v4/classuniform.aspx">Find My Dress Code</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Materials -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMaterials" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Materials
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMaterials">
+                <li><a class="dropdown-item" href="index Materials Microfiber.html">USA Microfiber Fibers</a></li>
+                <li><a class="dropdown-item" href="index Materials Cotton.html">USA Cotton Fibers</a></li>
+                <li><a class="dropdown-item" href="index Materials Polyester.html">USA Polyester Fibers</a></li>
+                <li><a class="dropdown-item" href="index Other Materials.html">Other Materials</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Botones de Wholesale y Sign In -->
+          <div class="d-flex align-items-center ms-lg-3 gap-3">
+            <a href="https://eurotard.com/v4/SignOn.aspx" class="nav-link wholesale-btn px-3 py-1">Wholesale</a>
+            <a href="https://eurotard.com/v4/SignOn.aspx" class="nav-link wholesale-btn px-3 py-1">Sign In</a>
           </div>
         </div>
-      </nav>
-    </header>
-    
+      </div>
+    </nav>
+  </header>
+
   <!-- HEADER Y BARRA DE NAVEGACION -->
   <!-- HEADER Y BARRA DE NAVEGACION -->
   <!-- HEADER Y BARRA DE NAVEGACION -->
@@ -282,25 +325,25 @@
     <div class="carousel-inner">
 
       <div class="carousel-item active">
-        <a href="https://link1.com" target="_blank" rel="noopener noreferrer">
+        <a href="#" target="_blank" rel="noopener noreferrer">
           <img src="image/banner 1.webp" alt="Imagen 1" />
         </a>
       </div>
 
       <div class="carousel-item">
-        <a href="https://link2.com" target="_blank" rel="noopener noreferrer">
+        <a href="#" target="_blank" rel="noopener noreferrer">
           <img src="image/banner 2.webp" alt="Imagen 2" />
         </a>
       </div>
 
       <div class="carousel-item">
-        <a href="https://link3.com" target="_blank" rel="noopener noreferrer">
+        <a href="#" target="_blank" rel="noopener noreferrer">
           <img src="image/banner 3.webp" alt="Imagen 3" />
         </a>
       </div>
 
       <div class="carousel-item">
-        <a href="https://link4.com" target="_blank" rel="noopener noreferrer">
+        <a href="#" target="_blank" rel="noopener noreferrer">
           <img src="image/banner 4.webp" alt="Imagen 4" />
         </a>
       </div>
@@ -312,19 +355,19 @@
       </div>
 
       <div class="carousel-item">
-        <a href="https://link6.com" target="_blank" rel="noopener noreferrer">
+        <a href="index Pointe Shoes.html" target="_blank" rel="noopener noreferrer">
           <img src="image/Pointe Shoe Banner.webp" alt="Imagen 6" />
         </a>
       </div>
 
       <div class="carousel-item">
-        <a href="https://link6.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://eurotard.com/v4/default.aspx?id=9" target="_blank" rel="noopener noreferrer">
           <img src="image/BANNER EUROTAD SHOES.webp" alt="Imagen 6" />
         </a>
       </div>
 
       <div class="carousel-item">
-        <a href="https://link6.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.eurotard.com/v4/default.aspx?id=118" target="_blank" rel="noopener noreferrer">
           <img src="image/banner Ballroom.webp" alt="Imagen 6" />
         </a>
       </div>
@@ -369,6 +412,13 @@
   <!-- GIFS INFORMATIVO -->
   <!-- GIFS INFORMATIVO -->
   <!-- GIFS INFORMATIVO -->
+
+
+
+
+
+
+
 
 
 
@@ -505,6 +555,10 @@
 
 
 
+
+
+
+
         <!-- Product Categories -->
         <!-- Product Categories -->
         <!-- Product Categories -->
@@ -525,12 +579,14 @@
               <a href="https://eurotard.com/v4/default.aspx?id=78" class="filter-btn"
                 data-filter="gimnasia">Gymnastics</a>
               <a href="https://eurotard.com/v4/default.aspx?id=42" class="filter-btn" data-filter="fajas">Cotton</a>
-              <a href="https://eurotard.com/v4/default.aspx?id=70" class="filter-btn"data-filter="grupos">Microfiber</a>
+              <a href="https://eurotard.com/v4/default.aspx?id=70" class="filter-btn"
+                data-filter="grupos">Microfiber</a>
               <a href="https://eurotard.com/v4/default.aspx?id=69" class="filter-btn" data-filter="estudios">Tights</a>
               <a href="https://eurotard.com/v4/default.aspx?id=9" class="filter-btn" data-filter="grupos">Eurotard
                 Shoes</a>
               <a href="index Pointe Shoes.html" class="filter-btn" data-filter="grupos">Merlet Pointe Shoes</a>
-              <a href="https://www.eurotard.com/v4/default.aspx?id=118" class="filter-btn" data-filter="grupos">Merlet Ballroom Shoes</a>
+              <a href="https://www.eurotard.com/v4/default.aspx?id=118" class="filter-btn" data-filter="grupos">Merlet
+                Ballroom Shoes</a>
             </div>
             <!-- BOTONES -->
 
@@ -819,11 +875,13 @@
               <!-- 18 -->
               <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="baila">
                 <div class="gallery-img position-relative">
-                  <a href="https://eurotard.com/v4/SearchResults.aspx?search=10127%2010126%2010362%2013125%2002128%2002173">
+                  <a
+                    href="https://eurotard.com/v4/SearchResults.aspx?search=10127%2010126%2010362%2013125%2002128%2002173">
                     <img src="GALERIA FILTRABLE/Tutu Dresses & Tutu.webp" class="img-fluid" alt="Leotardo Clásico">
                   </a>
                   <div class="overlay always-visible">
-                    <a href="https://eurotard.com/v4/SearchResults.aspx?search=10127%2010126%2010362%2013125%2002128%2002173" class="btn btn-buy-now">Shop Now</a>
+                    <a href="https://eurotard.com/v4/SearchResults.aspx?search=10127%2010126%2010362%2013125%2002128%2002173"
+                      class="btn btn-buy-now">Shop Now</a>
                   </div>
                 </div>
                 <div class="product-info text-center mt-3">
@@ -880,6 +938,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
         <!--Sección Informativa-->
         <!--Sección Informativa-->
         <!--Sección Informativa-->
@@ -897,10 +964,11 @@
                       d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z" />
                   </svg>
                 </div>
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownMaterials2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownMaterials2" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
                   High-Quality Materials
                 </a>
-                
+
                 <ul class="dropdown-menu" aria-labelledby="dropdownMaterials">
                   <li><a class="dropdown-item" href="index Materials Microfiber.html">USA Microfiber Fibers</a></li>
                   <li><a class="dropdown-item" href="index Materials Cotton.html">USA Cotton Fibers</a></li>
@@ -921,13 +989,14 @@
                   </svg>
                 </div>
                 <h4>Exchange and Return Policy</h4>
-              
+
                 <div class="botones-container">
-                  <a href="index Return Policy Dancers Studios.html" class="nav-link wholesale-btn">Dancers / Studios</a>
+                  <a href="index Return Policy Dancers Studios.html" class="nav-link wholesale-btn">Dancers /
+                    Studios</a>
                   <a href="index Return Policy Wholesale.html" class="nav-link wholesale-btn">Wholesale</a>
                 </div>
               </div>
-              
+
 
               <div class="service-item">
                 <div class="service-icon">
@@ -971,53 +1040,58 @@
 
 
 
+        <!--Carrusel 2-->
+        <!--Carrusel 2-->
+        <!--Carrusel 2-->
 
 
         <section id="hero-carousel-2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-inner">
-        
+
             <div class="carousel-item active">
               <a href="https://link1.com" target="_blank" rel="noopener noreferrer">
                 <img src="Banner Merlet/banner 1.webp" alt="Imagen 1" />
               </a>
             </div>
-        
+
             <div class="carousel-item">
               <a href="https://link2.com" target="_blank" rel="noopener noreferrer">
                 <img src="Banner Merlet/banner 2.webp" alt="Imagen 2" />
               </a>
             </div>
-        
+
             <div class="carousel-item">
               <a href="https://link3.com" target="_blank" rel="noopener noreferrer">
                 <img src="Banner Merlet/banner MERLET3.webp" alt="Imagen 3" />
               </a>
             </div>
-        
+
             <div class="carousel-item">
               <a href="https://link4.com" target="_blank" rel="noopener noreferrer">
                 <img src="Banner Merlet/banner 4.webp" alt="Imagen 4" />
               </a>
             </div>
-        
+
             <div class="carousel-item">
               <a href="https://link5.com" target="_blank" rel="noopener noreferrer">
                 <img src="Banner Merlet/banner 5.webp" alt="Imagen 5" />
               </a>
             </div>
-        
-          <!-- Flechas -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel-2" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-        
-          <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel-2" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
+
+            <!-- Flechas -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel-2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel-2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
         </section>
-        
+        <!--Carrusel 2-->
+        <!--Carrusel 2-->
+        <!--Carrusel 2-->
 
 
 
@@ -1051,8 +1125,6 @@
               <div id="formMessage" class="form-message" style="display: none; margin-top: 1rem; color: rgb(0, 0, 0);">
                 Thank you! Your message has been sent.
               </div>
-
-
             </div>
           </div>
         </section>
@@ -1155,7 +1227,8 @@
               <ul>
                 <li><a href="https://eurotard.com/about.html">Mission</a></li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdownMaterials" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdownMaterials" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                     Our Materials
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMaterials">
@@ -1185,7 +1258,8 @@
             <p>&copy; LYCRA® is a trademark of The LYCRA Company
               TACTEL® is a trademark of The LYCRA Company and licensed by NILIT®
 
-              Copyright 1982-2021 Eurotard Dancewear, All rights reserved. Photography: Brad Budd, Richard Calmes, Sean
+              Copyright 1982-2021 Eurotard Dancewear, All rights reserved. Photography: Brad Budd, Richard Calmes,
+              Sean
               McCarthy</p>
           </div>
         </footer>
@@ -1204,7 +1278,7 @@
           crossorigin="anonymous"></script>
         <script src="index.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.1/dist/js/lightbox.min.js"></script>
-        
-        </body>
-        
-        </html>
+
+</body>
+
+</html>

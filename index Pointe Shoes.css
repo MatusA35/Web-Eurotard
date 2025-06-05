@@ -802,9 +802,10 @@ body, html {
   box-sizing: border-box;
 }
 
-.modal.open {
-  display: flex;
+.modal-content {
+  margin: auto; /* Esto centra el modal-content si hay espacio vertical u horizontal */
 }
+
 
 .modal-content {
   background-color: #ffffff;

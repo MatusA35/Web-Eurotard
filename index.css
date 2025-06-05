@@ -55,7 +55,7 @@ header {
   .logo-phrase {
     max-width: 200px; /* AUMENTADO desde 140px */
     padding-top: 5px; /* Ajuste para mejor espaciado */
-    margin-bottom: -10;/* 👈 Puedes editar aquí el tamaño de la frase en móviles */
+    margin-bottom: -10px;/* 👈 Puedes editar aquí el tamaño de la frase en móviles */
   }
 }
 
@@ -101,7 +101,7 @@ header {
   
 
 
- 
+
 
  /* ESTILO GENERAL COMPARTIDO (Desktop y Móvil) */
 .button-style {
@@ -194,9 +194,9 @@ header {
 
 /* Contenedor general */
 .main-container {
-  max-width: 1100px; /* O lo que se ajuste mejor a tu diseño */
+  max-width: 1300px; /* O lo que se ajuste mejor a tu diseño */
   margin: 0 auto;
-  padding-inline: 24px; /* padding horizontal en ambos lados */
+  padding-inline: 10px; /* padding horizontal en ambos lados */
 }
 
 
