@@ -232,8 +232,7 @@ margin-top: -15px;
 
 
 
-
-/* Animación general de entrada */
+/* Animación de entrada */
 @keyframes fadeInSlide {
   0% {
     opacity: 0;
@@ -245,6 +244,7 @@ margin-top: -15px;
   }
 }
 
+/* Estilo general para ambos botones */
 .wholesale-btn-desktop,
 .wholesale-btn-mobile {
   background-color: #000000; /* fondo negro */
@@ -255,36 +255,66 @@ margin-top: -15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  padding: 8px 20px;
+  padding: 14px 24px; /* MÁS ALTO */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover para ambos */
 .wholesale-btn-desktop:hover,
 .wholesale-btn-mobile:hover {
-  background-color: #979797; /* naranja */
+  background-color: #444444; /* gris oscuro */
   transform: scale(1.08);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 
+/* Botones móviles ajustados */
 .wholesale-btn-mobile {
-  width: 80%;
-  margin: 10px auto;
-  animation: fadeInSlide 0.6s ease forwards;
-}
-
-/* Añadir margen vertical a los botones móviles */
-.wholesale-btn-mobile {
-  width: 80%;
-  margin: 12px auto; /* más espacio arriba y abajo */
-  animation: fadeInSlide 0.6s ease forwards;
+  width: 150px; /* más angosto */
+  height: 40px;
+  max-width: 260px;
+  margin: 14px auto;
   display: block;
+  animation: fadeInSlide 0.6s ease forwards;
 }
 
-/* También puedes agregar margen a los elementos <li> para separar mejor */
+/* Separación entre ítems del menú móvil */
 .nav-item.d-lg-none {
-  margin-bottom: 10px; /* espacio entre los ítems de la lista */
+  margin-bottom: 12px;
+}
+
+/* Botones solo visibles en móvil */
+.nav-item.d-lg-none .wholesale-btn-mobile {
+  width: 150px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 40px; /* centra el texto verticalmente */
+  text-decoration: none;
+  display: block;
+  margin: 14px auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  animation: fadeInSlide 0.6s ease forwards;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover solo en móvil */
+.nav-item.d-lg-none .wholesale-btn-mobile:hover {
+  background-color: #444444; /* gris oscuro */
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+/* Quitar bullets solo en los <li> del menú hamburguesa */
+.nav-item.d-lg-none {
+  list-style: none;
+  margin-bottom: 12px;
 }
 
 /* HEADER Y BARRA DE NAVEGACION */
