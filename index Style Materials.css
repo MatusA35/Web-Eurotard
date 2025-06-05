@@ -8,7 +8,6 @@
 /* HEADER Y BARRA DE NAVEGACION */
 /* HEADER Y BARRA DE NAVEGACION */
 
-
 header {
   background-color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -41,7 +40,7 @@ header {
 .logo-phrase {
   max-width: 200px; /* REDUCIDO desde 300px */
   height: auto;
-  margin-top: -15px;
+margin-top: -15px;
   margin-bottom: -10px;
 }
 
@@ -60,26 +59,25 @@ header {
 }
 
 .navbar {
-  padding: 1rem 0;
+  padding: 5px 5;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
   background-color: #000000;
+  margin-bottom: -20px;
 }
 
 .navbar .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  /* Alinea el menú hamburguesa a la derecha */
+  justify-content: space-between; /* Alinea el menú hamburguesa a la derecha */
 }
 
 /* ... continúan estilos ya presentes ... */
 
 .navbar-toggler {
-  margin-left: auto;
-  /* Asegura que el botón quede a la derecha */
+  margin-left: auto; /* Asegura que el botón quede a la derecha */
   border: none;
 }
 
@@ -116,75 +114,72 @@ header {
     gap: 15px;
   }
 
-  /* ESTILO GENERAL COMPARTIDO (Desktop y Móvil) */
-  .button-style {
-    background-color: #9d401f;
-    color: #ffffff !important;
-    padding: 8px 14px;
-    font-size: 14px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    display: inline-block;
-    border: none;
-    text-decoration: none;
+ /* ESTILO GENERAL COMPARTIDO (Desktop y Móvil) */
+.button-style {
+  background-color: #9d401f;
+  color: #ffffff !important;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+}
+
+/* Efecto hover para ambas versiones */
+.button-style:hover {
+  filter: brightness(0.95);
+  transform: scale(1.03);
+}
+
+/* Estilos específicos solo para móviles */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 1rem 0;
   }
 
-  /* Efecto hover para ambas versiones */
-  .button-style:hover {
-    filter: brightness(0.95);
-    transform: scale(1.03);
+  .navbar-nav .nav-link {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
   }
 
-  /* Estilos específicos solo para móviles */
-  @media (max-width: 991.98px) {
-    .navbar-nav {
-      text-align: center;
-      background-color: #ffffff;
-      padding: 1rem 0;
-    }
-
-    .navbar-nav .nav-link {
-      display: block;
-      margin: 10px 0;
-      font-size: 16px;
-    }
-
-    .shop-icon {
-      justify-content: center;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      /* <--- aquí está el cambio para centrar */
-    }
-
-    .shop-icon ul {
-      justify-content: center;
-      gap: 15px;
-    }
+  .shop-icon {
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* <--- aquí está el cambio para centrar */
   }
 
-  .navbar-collapse {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-    margin-top: 0;
+  .shop-icon ul {
+    justify-content: center;
+    gap: 15px;
   }
+}
+.navbar-collapse {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  margin-top: 0;
+}
 
-  /* Cuando está abierto */
-  .navbar-collapse.show {
-    max-height: 1000px;
-    /* Muy alto para cubrir todo el menú, evita el corte */
-    opacity: 1;
-    margin-top: 10px;
-  }
+/* Cuando está abierto */
+.navbar-collapse.show {
+  max-height: 1000px; /* Muy alto para cubrir todo el menú, evita el corte */
+  opacity: 1;
+  margin-top: 10px;
+}
 
-  /* Opcional: para suavizar el overflow visible */
-  .navbar-collapse.collapsing {
-    overflow: visible !important;
-  }
+/* Opcional: para suavizar el overflow visible */
+.navbar-collapse.collapsing {
+  overflow: visible !important;
+}
 }
 
 .wholesale-btn {
@@ -192,8 +187,7 @@ header {
   color: #fff;
   border-radius: 20px;
   transition: all 0.3s ease;
-  white-space: nowrap;
-  /* Evita que el texto se corte o haga salto */
+  white-space: nowrap; /* Evita que el texto se corte o haga salto */
   font-weight: 500;
 }
 
@@ -202,19 +196,95 @@ header {
   color: #fff;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 991.98px) {
   .d-flex.align-items-center.ms-lg-3.gap-3 {
     justify-content: center;
     flex-direction: column;
   }
 }
 
+/* Contenedor general */
+.main-container {
+  max-width: 1100px; /* O lo que se ajuste mejor a tu diseño */
+  margin: 0 auto;
+  padding-inline: 24px; /* padding horizontal en ambos lados */
+}
+
+.secondary-bar {
+  background-color: #f8f9fa;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  margin-bottom: -15px;
+}
+.btn-container {
+  /* Flexbox ya está en HTML, solo aseguramos centrado */
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* separación entre botones */
+}
 /* HEADER Y BARRA DE NAVEGACION */
 /* HEADER Y BARRA DE NAVEGACION */
 /* HEADER Y BARRA DE NAVEGACION */
 
 
 
+
+
+
+
+/* Animación general de entrada */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wholesale-btn-desktop,
+.wholesale-btn-mobile {
+  background-color: #000000; /* fondo negro */
+  color: #ffffff; /* texto blanco */
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.wholesale-btn-desktop:hover,
+.wholesale-btn-mobile:hover {
+  background-color: #979797; /* naranja */
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.wholesale-btn-mobile {
+  width: 80%;
+  margin: 10px auto;
+  animation: fadeInSlide 0.6s ease forwards;
+}
+
+/* Añadir margen vertical a los botones móviles */
+.wholesale-btn-mobile {
+  width: 80%;
+  margin: 12px auto; /* más espacio arriba y abajo */
+  animation: fadeInSlide 0.6s ease forwards;
+  display: block;
+}
+
+/* También puedes agregar margen a los elementos <li> para separar mejor */
+.nav-item.d-lg-none {
+  margin-bottom: 10px; /* espacio entre los ítems de la lista */
+}
 
 
 
